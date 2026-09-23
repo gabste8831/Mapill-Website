@@ -59,7 +59,7 @@ export function HealthScreen() { return <div className="screen-padding"><p class
 
 export function ThemeSwitcherDemo() {
  const [theme,setTheme]=useState("light");
- return <div><Tabs value={theme} onValueChange={setTheme}><TabsList className="theme-tabs" aria-label="Tema da demonstração">{[["light","Claro"],["dark","Escuro"],["contrast","Alto contraste"],["colorblind","Daltonismo"]].map(([v,l])=><TabsTrigger key={v} value={v}>{l}</TabsTrigger>)}</TabsList></Tabs><div className={cn("theme-demo",`demo-wrap-${theme}`)}><DoseCard compact theme={theme}/></div></div>
+ return <div><Tabs value={theme} onValueChange={setTheme}><TabsList className="theme-tabs" aria-label="Tema da demonstração">{[{value:"light",label:"Claro"},{value:"dark",label:"Escuro"},{value:"contrast",label:"Alto contraste"},{value:"colorblind",label:"Daltonismo"}].map(({value,label})=><TabsTrigger key={value} value={value}>{label}</TabsTrigger>)}</TabsList></Tabs><div className={cn("theme-demo",`demo-wrap-${theme}`)}><DoseCard compact theme={theme}/></div></div>
 }
 
 const faqs = [
