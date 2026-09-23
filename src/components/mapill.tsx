@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import logoLight from "@/assets/mapill-logo-claro.png.asset.json";
+import logoDark from "@/assets/mapill-logo-escuro.png.asset.json";
+import iconAsset from "@/assets/mapill-icon.png.asset.json";
 
 export function Logo({ compact = false }: { compact?: boolean }) {
-  return <a href="#inicio" className="inline-flex min-h-11 items-center gap-2" aria-label="Mapill, início">
-    <svg viewBox="0 0 40 40" className="size-8 shrink-0" aria-hidden="true"><g transform="rotate(-45 20 20)"><path d="M20 5h1a10 10 0 0 1 10 10v5H20V5Z" fill="var(--brand-mid)"/><path d="M20 20h11v5a10 10 0 0 1-10 10h-1V20Z" fill="var(--brand-light)"/><path d="M20 5h-1A10 10 0 0 0 9 15v5h11V5Z" fill="var(--brand-mid)"/><path d="M20 20H9v5a10 10 0 0 0 10 10h1V20Z" fill="var(--brand-light)"/></g></svg>
-    {!compact && <span className="font-brand text-[22px] font-bold tracking-[-0.03em] text-foreground">Mapill</span>}
+  return <a href="#inicio" className="brand-logo" aria-label="Mapill, início">
+    {compact ? <img src={iconAsset.url} alt="" className="brand-icon" /> : <picture><source srcSet={logoDark.url} media="(prefers-color-scheme: dark)"/><img src={logoLight.url} alt="Mapill" className="brand-lockup" /></picture>}
   </a>
 }
 
