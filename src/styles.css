@@ -19,15 +19,15 @@
 .section-heading{margin-bottom:52px}
 .problem-section .eyebrow{margin-bottom:22px}
 /* blocos 01, 02 e 03 */
-.problem-grid article>span{display:block;margin-bottom:20px}
-.problem-grid h3{margin-bottom:14px}
+.problem-grid article>span{display:block;margin-bottom:16px}
+.problem-grid h3{margin-bottom:18px}
 .problem-grid p{margin:0}
 /* passos */
-.timeline-step>div:nth-child(2){padding-top:16px}
-.timeline-step h3{margin-bottom:12px}
+.timeline-step>div:nth-child(2){padding-top:14px}
+.timeline-step h3{margin-bottom:16px}
 .timeline-step p{margin:0}
 /* benefícios */
-.benefit-card h3{margin:24px 0 14px}
+.benefit-card h3{margin:24px 0 18px}
 /* acessibilidade */
 .access-grid>div:first-child>h2{max-width:24ch}
 .access-grid>div:first-child>p:not(.eyebrow){margin:22px 0 0}
