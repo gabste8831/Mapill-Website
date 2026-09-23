@@ -5,9 +5,10 @@
 - Logos oficiais no cabeçalho, rodapé e favicon
 - Textos do cabeçalho mais leves e espaçamentos de celular ajustados
 - Respiro das linhas de apoio acima dos títulos, seção de acessibilidade, logo do cabeçalho e card azul final
+- Espaçamentos internos dos textos revisados em todo o site: blocos 01/02/03, passos, benefícios, "Para quem", acessibilidade, privacidade, perguntas, card azul e rodapé
 
 ## Em andamento
-- Revisar espaçamentos internos dos textos em todo o site, incluindo os blocos 01, 02 e 03 da seção "Esquecer um remédio"
+- Nada em andamento
 
 ## Pendente
 - Nada pendente
