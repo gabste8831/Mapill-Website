@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Logo, Section, PhoneFrame, TodayScreen as Missing, AlarmScreen, ScannerScreen, AdherenceScreen, StockScreen, HealthScreen, ThemeSwitcherDemo, Faq, PlayIcon, StatusBadge, icons } from "@/components/mapill";
+import { Logo, Section, PhoneFrame, AlarmScreen, ScannerScreen, AdherenceScreen, StockScreen, HealthScreen, ThemeSwitcherDemo, Faq, PlayIcon, StatusBadge, icons } from "@/components/mapill";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
