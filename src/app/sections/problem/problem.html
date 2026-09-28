@@ -1,0 +1,23 @@
+<section class="section-space problem-section">
+  <div class="container">
+    <div class="problem-heading" appReveal>
+      <p class="eyebrow">Por que isso importa</p>
+      <h2>Esquecer um remédio não é descuido. É rotina demais para caber na memória.</h2>
+    </div>
+
+    <div class="problem-grid" appReveal>
+      @for (problem of problems; track problem.number) {
+        <article>
+          <span class="problem-number" aria-hidden="true">{{ problem.number }}</span>
+          <h3>{{ problem.title }}</h3>
+          <p>{{ problem.text }}</p>
+        </article>
+      }
+    </div>
+
+    <p class="closing-copy" appReveal>
+      Tratamento que não é seguido não funciona. O Mapill existe para tirar esse peso da cabeça e
+      colocar no bolso.
+    </p>
+  </div>
+</section>

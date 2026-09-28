@@ -1,0 +1,30 @@
+<div class="dose-head">
+  <div>
+    <p class="mock-label">Próxima dose</p>
+    <p class="dose-time">14:30</p>
+  </div>
+  @if (taken()) {
+    <span class="dose-check"><svg appIcon="check"></svg></span>
+  }
+</div>
+<p class="dose-name">Losartana 50 mg</p>
+<p class="mock-muted">1 comprimido</p>
+
+@if (compact()) {
+  <div class="dose-status">
+    <app-status-badge [status]="taken() ? 'tomada' : 'pendente'" />
+  </div>
+} @else {
+  <!-- Botões ilustrativos: fazem parte do desenho da tela, não são clicáveis -->
+  <div class="dose-actions">
+    <span class="btn btn-primary dose-confirm">
+      @if (taken()) {
+        <svg appIcon="check"></svg>
+        Tomada
+      } @else {
+        Tomei
+      }
+    </span>
+    <span class="btn btn-ghost">Pular</span>
+  </div>
+}

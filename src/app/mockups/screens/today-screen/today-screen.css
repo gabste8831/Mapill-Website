@@ -1,0 +1,26 @@
+.dose-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.mini-dose {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 11px;
+}
+
+.mini-dose-info {
+  display: grid;
+}
+
+.mini-dose-info strong {
+  font-size: 13px;
+}
+
+.mini-dose-info span {
+  color: var(--mapill-texto-secundario);
+  font-size: 9px;
+}

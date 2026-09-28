@@ -1,0 +1,40 @@
+<section class="hero">
+  <div class="hero-grid container">
+    <div class="hero-copy">
+      <p class="eyebrow">Adesão a medicamentos, sem esforço</p>
+      <h1>Cada dose na hora certa. E a certeza de que ela foi tomada.</h1>
+      <p class="hero-sub">
+        O Mapill lembra, registra e avisa antes de faltar. Um app feito para quem cuida da própria
+        saúde, ou da saúde de alguém, todos os dias.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-lg btn-gradient" [href]="site.apkUrl" download>
+          <svg appIcon="download"></svg>
+          Baixar APK para Android
+        </a>
+        <a class="btn btn-lg btn-link" href="#como-funciona">
+          Ver como funciona
+          <svg appIcon="arrow-down"></svg>
+        </a>
+      </div>
+
+      <p class="microcopy">
+        <svg appIcon="wifi-off"></svg>
+        <span>Funciona sem internet</span>
+        <span class="microcopy-sep" aria-hidden="true">·</span>
+        <span class="microcopy-last">Seus dados ficam no seu celular</span>
+      </p>
+    </div>
+
+    <div class="phone-stage" aria-hidden="true">
+      <div class="phone-halo"></div>
+      <app-phone-frame class="hero-phone" label="Tela inicial do Mapill">
+        <app-today-screen animate />
+      </app-phone-frame>
+      <app-phone-frame class="alarm-phone" label="Tela de alarme do Mapill">
+        <app-alarm-screen />
+      </app-phone-frame>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+/* Selo: única exceção à regra de não usar caixa alta */
+:host {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 3px;
+  padding: var(--selo-padding, 4px 7px);
+  border-radius: var(--mapill-raio-sm);
+  outline: var(--selo-contorno, 0 solid transparent);
+  outline-offset: -1px;
+  font-size: var(--selo-fonte, 10px);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+svg {
+  width: var(--selo-icone, 11px);
+  height: var(--selo-icone, 11px);
+}
+
+:host([data-status='tomada']) {
+  background: var(--mapill-sucesso-fundo);
+  color: var(--mapill-sucesso-texto);
+}
+
+:host([data-status='atrasada']) {
+  background: var(--mapill-erro-fundo);
+  color: var(--mapill-erro-texto);
+}
+
+:host([data-status='pendente']) {
+  background: var(--mapill-azul-diluido);
+  color: var(--mapill-azul-diluido-texto);
+}
+
+:host([data-status='atencao']) {
+  background: var(--mapill-atencao-fundo);
+  color: var(--mapill-atencao-texto);
+}

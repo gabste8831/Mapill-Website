@@ -1,0 +1,15 @@
+<div class="screen-padding">
+  <p class="mock-label">Sua semana</p>
+  <p class="mock-title">Adesão</p>
+  <p class="adherence-number">92%</p>
+  <p class="mock-muted">das doses tomadas no horário</p>
+
+  <div class="bar-chart">
+    @for (item of week; track $index) {
+      <div class="bar-col">
+        <div class="bar-track"><div class="bar" [style.height.%]="item.value"></div></div>
+        <span>{{ item.day }}</span>
+      </div>
+    }
+  </div>
+</div>

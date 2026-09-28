@@ -1,0 +1,31 @@
+.health-card {
+  padding: 6px;
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.health-grid > div {
+  display: grid;
+  min-height: 72px;
+  align-content: center;
+  padding: 10px;
+  border-radius: var(--mapill-raio-md);
+  background: var(--mapill-apoio);
+}
+
+.health-grid .wide {
+  grid-column: 1 / -1;
+}
+
+.health-grid span {
+  color: var(--mapill-texto-secundario);
+  font-size: 8px;
+}
+
+.health-grid strong {
+  font-size: 10px;
+}

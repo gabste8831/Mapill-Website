@@ -1,0 +1,53 @@
+<section id="como-funciona" class="section-space surface-band">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <p class="eyebrow">Como funciona</p>
+      <h2>Do cadastro ao cuidado diário, sem complicação.</h2>
+    </div>
+
+    <div class="timeline">
+      <article class="timeline-step" appReveal>
+        <div class="step-number" aria-hidden="true">1</div>
+        <div class="step-copy">
+          <h3>Cadastre em segundos.</h3>
+          <p>
+            Aponte a câmera para o código de barras da caixa. O Mapill consulta a base oficial da
+            CMED (Anvisa) e preenche os dados. Se preferir, digite.
+          </p>
+        </div>
+        <app-phone-frame class="mini-phone" label="Cadastro de medicamento por código de barras">
+          <app-scanner-screen />
+        </app-phone-frame>
+      </article>
+
+      <article class="timeline-step" appReveal>
+        <div class="step-number" aria-hidden="true">2</div>
+        <div class="step-copy">
+          <h3>Receba o alarme.</h3>
+          <p>
+            Na hora da dose, o celular toca mesmo bloqueado. Um toque em “Tomei” e fica registrado.
+          </p>
+        </div>
+        <app-phone-frame class="mini-phone" label="Alarme de dose em tela cheia">
+          <app-alarm-screen />
+        </app-phone-frame>
+      </article>
+
+      <article class="timeline-step" appReveal>
+        <div class="step-number" aria-hidden="true">3</div>
+        <div class="step-copy">
+          <h3>Acompanhe sem pensar.</h3>
+          <p>O app desconta o estoque, avisa antes de acabar e mostra sua semana de adesão.</p>
+        </div>
+        <div class="stacked-mini">
+          <app-phone-frame class="mini-phone" label="Adesão semanal">
+            <app-adherence-screen />
+          </app-phone-frame>
+          <app-phone-frame class="mini-phone mini-phone-back" label="Controle de estoque">
+            <app-stock-screen />
+          </app-phone-frame>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

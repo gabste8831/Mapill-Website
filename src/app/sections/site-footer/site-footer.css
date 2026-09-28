@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+
+.site-footer {
+  padding-block: 64px;
+  background: var(--mapill-fundo);
+}
+
+.footer-top,
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.footer-top p {
+  margin-top: 14px;
+  color: var(--mapill-texto-secundario);
+  font-size: 14px;
+}
+
+.footer-top nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: 24px;
+}
+
+.footer-top a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--mapill-texto);
+  font-size: 13px;
+}
+
+.footer-top a:hover {
+  color: var(--mapill-azul-destaque);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--mapill-borda);
+  color: var(--mapill-texto-secundario);
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .footer-top {
+    gap: 16px;
+  }
+
+  .footer-top nav {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    gap: 4px;
+  }
+}

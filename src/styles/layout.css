@@ -1,0 +1,99 @@
+/* Estrutura das seções, textos de apoio e entrada ao rolar */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.section-space {
+  padding-block: 104px;
+  scroll-margin-top: 96px;
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+  color: var(--mapill-texto-secundario);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.section-heading {
+  max-width: 660px;
+  margin-bottom: 52px;
+}
+
+/* Aparece só ao navegar pelo teclado */
+.skip-link {
+  position: absolute;
+  z-index: 100;
+  top: -100px;
+  left: 12px;
+  padding: 12px 16px;
+  border-radius: var(--mapill-raio-lg);
+  background: var(--mapill-azul-acao);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: none;
+}
+
+.skip-link:focus-visible {
+  top: 12px;
+}
+
+/* Com JS ativo (classe .js no <html>), o bloco sobe e aparece uma única vez */
+.js .reveal {
+  opacity: 0;
+  translate: 0 14px;
+  transition:
+    opacity var(--mapill-medio) var(--mapill-curva),
+    translate var(--mapill-medio) var(--mapill-curva);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  translate: none;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-space {
+    padding-block: 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-space {
+    padding-block: 64px;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    translate: none;
+  }
+}

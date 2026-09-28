@@ -1,0 +1,12 @@
+:host {
+  flex-shrink: 0;
+}
+
+:host(.icon-filled) .f {
+  fill: currentColor;
+}
+
+/* Detalhe interno na cor do fundo onde o ícone está (padrão: cartão branco) */
+:host(.icon-filled) .k {
+  stroke: var(--icon-recorte, var(--mapill-cartao));
+}

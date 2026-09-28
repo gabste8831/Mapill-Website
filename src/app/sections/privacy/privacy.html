@@ -1,0 +1,17 @@
+<section id="privacidade" class="section-space privacy-band">
+  <div class="container">
+    <div class="privacy-intro" appReveal>
+      <span class="shield-mark"><svg appIcon="shield-check" filled></svg></span>
+      <div>
+        <p class="eyebrow">Privacidade</p>
+        <h2>Dado de saúde é dado sensível. Tratamos como tal.</h2>
+      </div>
+    </div>
+
+    <ul class="privacy-grid" appReveal>
+      @for (promise of promises; track promise) {
+        <li><svg appIcon="check"></svg>{{ promise }}</li>
+      }
+    </ul>
+  </div>
+</section>

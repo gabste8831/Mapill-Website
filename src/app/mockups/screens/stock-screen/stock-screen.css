@@ -1,0 +1,44 @@
+.stock-card {
+  margin-bottom: 10px;
+  padding: 12px;
+}
+
+.stock-card strong {
+  font-size: 11px;
+}
+
+.stock-card p {
+  margin: 2px 0 8px;
+  color: var(--mapill-texto-secundario);
+  font-size: 9px;
+}
+
+.stock-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.stock-days {
+  color: var(--mapill-erro);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.stock-alert {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 9px;
+  padding: 6px;
+  border-radius: var(--mapill-raio-sm);
+  background: var(--mapill-atencao-fundo);
+  color: var(--mapill-atencao-texto);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.stock-alert svg {
+  width: 12px;
+  height: 12px;
+}

@@ -1,0 +1,46 @@
+:host {
+  /* selos dentro do celular ficam na escala reduzida da tela */
+  --selo-fonte: 8px;
+  --selo-icone: 10px;
+  --selo-padding: 4px 6px;
+
+  position: relative;
+  display: block;
+  width: 292px;
+  height: 584px;
+  padding: 7px;
+  overflow: hidden;
+  border: 2px solid #141719;
+  border-radius: 36px;
+  background: #141719;
+  box-shadow: var(--mapill-sombra-celular);
+}
+
+/* No tema escuro, um contorno sutil separa a moldura do fundo */
+@media (prefers-color-scheme: dark) {
+  :host {
+    border-color: var(--mapill-borda);
+  }
+}
+
+.phone-speaker {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  left: 50%;
+  width: 44px;
+  height: 4px;
+  border-radius: 4px;
+  background: #141719;
+  transform: translateX(-50%);
+}
+
+/* container: as telas podem se ajustar à largura do celular em que estão */
+.phone-screen {
+  height: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: var(--phone-screen-radius, 28px);
+  background: var(--mapill-fundo);
+  color: var(--mapill-texto);
+}

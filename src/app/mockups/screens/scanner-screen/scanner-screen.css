@@ -1,0 +1,82 @@
+.camera-view {
+  position: relative;
+  display: grid;
+  height: 185px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: var(--mapill-raio-lg);
+  background: #313943;
+  color: #fff;
+}
+
+/* moldura de leitura */
+.camera-view::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 65px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.camera-icon {
+  position: absolute;
+  top: 16px;
+  width: 20px;
+  height: 20px;
+}
+
+.scan-line {
+  width: 135px;
+  height: 2px;
+  background: var(--mapill-azul-ceu);
+  box-shadow: 0 0 8px var(--mapill-azul-ceu);
+}
+
+.camera-hint {
+  position: absolute;
+  bottom: 14px;
+  font-size: 8px;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.suggestion-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--mapill-azul-diluido);
+  color: var(--mapill-azul-destaque);
+}
+
+.suggestion svg {
+  width: 14px;
+  height: 14px;
+}
+
+.suggestion-info {
+  display: grid;
+  flex: 1;
+}
+
+.suggestion-info strong {
+  font-size: 9px;
+}
+
+.suggestion-info span {
+  color: var(--mapill-texto-secundario);
+  font-size: 8px;
+}
+
+.suggestion-check {
+  color: var(--mapill-sucesso);
+}

@@ -1,0 +1,109 @@
+:host {
+  display: block;
+}
+
+/* Um dos poucos blocos azuis cheios da página */
+.final-cta {
+  position: relative;
+  display: flex;
+  min-height: 420px;
+  align-items: center;
+  overflow: hidden;
+  padding: 64px;
+  border-radius: var(--mapill-raio-xl);
+  background: var(--mapill-gradiente-azul);
+  color: #fff;
+}
+
+.final-cta-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 610px;
+  padding-bottom: 8px;
+}
+
+.final-cta .eyebrow {
+  color: #ddeaff;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 300;
+}
+
+.cta-note {
+  margin-top: 14px;
+  color: #ddeaff;
+  font-size: 13px;
+}
+
+/* No desktop o celular fica ao lado do texto, inteiro, levemente deslocado e inclinado */
+.cta-phone {
+  position: relative;
+  z-index: 2;
+  top: 54px;
+  right: 36px;
+  width: 220px;
+  height: 440px;
+  flex-shrink: 0;
+  transform: rotate(3deg);
+}
+
+/* Em telas menores ele vira marca-d'água atrás do texto */
+@media (max-width: 900px) {
+  .final-cta-copy {
+    max-width: 540px;
+  }
+
+  .cta-phone {
+    position: absolute;
+    z-index: 1;
+    top: 54px;
+    right: -20px;
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 640px) {
+  .final-cta {
+    min-height: 560px;
+    align-items: flex-start;
+    padding: 48px 24px 40px;
+  }
+
+  .final-cta-copy {
+    max-width: 100%;
+  }
+
+  h2 {
+    max-width: 12ch;
+  }
+
+  .btn-white {
+    min-height: 52px;
+    padding-inline: 18px;
+  }
+
+  .cta-note {
+    max-width: 26ch;
+  }
+
+  .cta-phone {
+    top: 350px;
+    right: -12px;
+    width: 180px;
+    height: 360px;
+    opacity: 0.16;
+  }
+}
+
+@media (max-width: 380px) {
+  .final-cta {
+    min-height: 580px;
+  }
+
+  .cta-phone {
+    top: 360px;
+  }
+}

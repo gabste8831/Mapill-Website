@@ -1,0 +1,32 @@
+<div class="theme-tabs" role="tablist" aria-label="Tema da demonstração">
+  @for (item of themes; track item.value; let i = $index) {
+    <button
+      #tab
+      type="button"
+      role="tab"
+      [id]="'tema-' + item.value"
+      [attr.aria-selected]="theme() === item.value"
+      [attr.tabindex]="theme() === item.value ? 0 : -1"
+      aria-controls="tema-demo"
+      (click)="select(item.value)"
+      (keydown)="onKeydown($event, i)"
+    >
+      {{ item.label }}
+    </button>
+  }
+</div>
+
+<div
+  id="tema-demo"
+  class="theme-demo"
+  role="tabpanel"
+  [attr.data-theme]="theme()"
+  [attr.aria-labelledby]="'tema-' + theme()"
+>
+  <app-dose-card compact />
+  <div class="state-legend">
+    <app-status-badge status="tomada" />
+    <app-status-badge status="atrasada" />
+    <app-status-badge status="atencao" />
+  </div>
+</div>

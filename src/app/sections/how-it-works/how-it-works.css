@@ -1,0 +1,140 @@
+:host {
+  display: block;
+}
+
+.surface-band {
+  background: var(--mapill-cartao);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* linha fina que liga os passos */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 7%;
+  left: 7%;
+  height: 1px;
+  background: var(--mapill-borda);
+}
+
+.timeline-step {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-number {
+  z-index: 2;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mapill-azul-acao);
+  color: #fff;
+  font-weight: 700;
+}
+
+.step-copy {
+  min-height: 200px;
+  padding-top: 14px;
+}
+
+.step-copy h3 {
+  margin-bottom: 16px;
+}
+
+.step-copy p {
+  color: var(--mapill-texto-secundario);
+  font-size: 15px;
+}
+
+.mini-phone {
+  --phone-screen-radius: 21px;
+  --screen-padding: 34px 11px 12px;
+
+  width: 210px;
+  height: 420px;
+  border-radius: 28px;
+}
+
+.stacked-mini {
+  position: relative;
+  width: 270px;
+  height: 420px;
+}
+
+.stacked-mini .mini-phone:first-child {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+}
+
+.mini-phone-back {
+  position: absolute;
+  right: 0;
+  transform: translate(42px, 24px) rotate(4deg);
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 1px;
+    height: auto;
+  }
+
+  .timeline-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: start;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .step-copy {
+    min-height: 0;
+    padding: 4px 0 28px;
+  }
+
+  .timeline-step > .mini-phone,
+  .timeline-step > .stacked-mini {
+    grid-column: 2;
+    margin-bottom: 52px;
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline-step {
+    gap: 12px;
+  }
+
+  .timeline-step > .mini-phone,
+  .timeline-step > .stacked-mini {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .stacked-mini {
+    transform: scale(0.88);
+    transform-origin: top left;
+  }
+}

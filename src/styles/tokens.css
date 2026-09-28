@@ -1,0 +1,93 @@
+/*
+ * Tokens de design do Mapill (ver docs/identidade-visual.md).
+ * As cores já passam no contraste WCAG AA: não clarear nem escurecer sem refazer a conta.
+ */
+:root {
+  color-scheme: light;
+
+  /* marca */
+  --mapill-azul-marca: #196ff3;
+  --mapill-azul-acao: #0b5fd9;
+  --mapill-azul-acao-hover: #1f6fe8;
+  --mapill-azul-ceu: #7ed6fe;
+  --mapill-azul-destaque: #0b5fd9; /* texto e ícone em destaque */
+  --mapill-azul-diluido: #eaf1fe;
+  --mapill-azul-diluido-texto: #0a3f8f;
+  --mapill-gradiente-azul: linear-gradient(135deg, #0b5fd9, #1f6fe8);
+
+  /* superfícies e texto */
+  --mapill-fundo: #f1f4f8;
+  --mapill-cartao: #ffffff;
+  --mapill-apoio: #f5f7fa;
+  --mapill-superficie: #e9edf3;
+  --mapill-texto: #141719;
+  --mapill-texto-secundario: #4a5160;
+  --mapill-texto-apoio: #6b7280;
+  --mapill-borda: #cbd2de;
+
+  /* estados: texto, vivo (ícone e barra), fundo diluído e texto sobre o fundo */
+  --mapill-sucesso: #11803e;
+  --mapill-sucesso-vivo: #12963f;
+  --mapill-sucesso-fundo: #e8f6ec;
+  --mapill-sucesso-texto: #04502a;
+  --mapill-erro: #c90000;
+  --mapill-erro-fundo: #fdeaea;
+  --mapill-erro-texto: #8c0009;
+  --mapill-erro-cheio: #9e0008;
+  --mapill-atencao: #a16207;
+  --mapill-atencao-vivo: #ffc107;
+  --mapill-atencao-fundo: #fdf3c4;
+  --mapill-atencao-texto: #5c4a0f;
+
+  /* tipografia */
+  --mapill-fonte: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* forma */
+  --mapill-raio-sm: 6px;
+  --mapill-raio-md: 10px;
+  --mapill-raio-lg: 14px;
+  --mapill-raio-xl: 24px; /* só blocos grandes */
+  --mapill-raio-full: 999px;
+  --mapill-sombra: 0 1px 3px rgba(25, 28, 30, 0.08);
+  --mapill-sombra-elevada: 0 2px 8px rgba(25, 28, 30, 0.1);
+  --mapill-sombra-flutuante: 0 4px 8px rgba(25, 28, 30, 0.2);
+  --mapill-sombra-celular:
+    0 4px 8px rgba(25, 28, 30, 0.2), 0 24px 48px -12px rgba(11, 95, 217, 0.18);
+
+  /* movimento */
+  --mapill-rapido: 140ms;
+  --mapill-medio: 280ms;
+  --mapill-lento: 420ms;
+  --mapill-curva: cubic-bezier(0.33, 1, 0.68, 1);
+  --mapill-curva-enfase: cubic-bezier(0.34, 1.56, 0.64, 1); /* só no check de dose tomada */
+}
+
+/* Tema escuro automático. No escuro, a superfície mais alta é a mais clara. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --mapill-azul-destaque: #7fb2ff;
+    --mapill-azul-diluido: #16233a;
+    --mapill-azul-diluido-texto: #b9d3ff;
+    --mapill-fundo: #0f1319;
+    --mapill-cartao: #191f27;
+    --mapill-apoio: #222933;
+    --mapill-superficie: #2a323d;
+    --mapill-texto: #e6e9ee;
+    --mapill-texto-secundario: #aeb6c4;
+    --mapill-texto-apoio: #9aa4b2;
+    --mapill-borda: #3c4553;
+    --mapill-sucesso: #68de94;
+    --mapill-sucesso-vivo: #68de94;
+    --mapill-sucesso-fundo: #173523;
+    --mapill-sucesso-texto: #68de94;
+    --mapill-erro: #ff9a92;
+    --mapill-erro-fundo: #3c1c20;
+    --mapill-erro-texto: #ff9a92;
+    --mapill-atencao: #f5b54a;
+    --mapill-atencao-fundo: #382f14;
+    --mapill-atencao-texto: #f5b54a;
+    --mapill-sombra: 0 1px 3px rgba(0, 0, 0, 0.36);
+    --mapill-sombra-elevada: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+}

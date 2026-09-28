@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  /* os ícones ficam direto sobre o fundo da página */
+  --icon-recorte: var(--mapill-fundo);
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.audience-grid svg {
+  width: 26px;
+  height: 26px;
+  color: var(--mapill-azul-destaque);
+}
+
+.audience-grid h3 {
+  margin: 20px 0 18px;
+}
+
+.audience-grid p {
+  color: var(--mapill-texto-secundario);
+}
+
+@media (max-width: 900px) {
+  .audience-grid {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .audience-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

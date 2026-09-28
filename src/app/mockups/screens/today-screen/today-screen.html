@@ -1,0 +1,21 @@
+<div class="screen-padding">
+  <p class="mock-label">Hoje, 23 de setembro</p>
+  <p class="mock-title">Boa tarde, Helena</p>
+
+  <app-dose-card [taken]="taken()" />
+
+  <div class="dose-list">
+    <div class="mini-dose mock-card">
+      <div class="mini-dose-info"><strong>08:00</strong><span>Levotiroxina 50 mcg</span></div>
+      <app-status-badge status="tomada" />
+    </div>
+    <div class="mini-dose mock-card">
+      <div class="mini-dose-info"><strong>12:00</strong><span>Metformina 850 mg</span></div>
+      <app-status-badge status="atrasada" />
+    </div>
+    <div class="mini-dose mock-card">
+      <div class="mini-dose-info"><strong>20:00</strong><span>Sinvastatina 20 mg</span></div>
+      <app-status-badge status="pendente" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+:host {
+  display: block;
+  padding: 16px;
+  border-radius: var(--mapill-raio-lg);
+  background: var(--mapill-cartao);
+  box-shadow: var(--mapill-sombra);
+  color: var(--mapill-texto);
+  transition:
+    background-color var(--mapill-medio) var(--mapill-curva),
+    color var(--mapill-medio) var(--mapill-curva),
+    box-shadow var(--mapill-medio) var(--mapill-curva);
+}
+
+.dose-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dose-time {
+  color: var(--mapill-azul-destaque);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.dose-name {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.dose-check {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mapill-sucesso-fundo);
+  color: var(--mapill-sucesso);
+  animation: check-in var(--mapill-lento) var(--mapill-curva-enfase);
+}
+
+.dose-check svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dose-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.dose-confirm {
+  min-height: 40px;
+  flex: 1;
+}
+
+.dose-status {
+  margin-top: 16px;
+}
+
+@keyframes check-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

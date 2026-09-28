@@ -1,0 +1,40 @@
+<section id="perguntas" class="section-space">
+  <div class="container">
+    <div class="faq-layout">
+      <div appReveal>
+        <p class="eyebrow">Perguntas frequentes</p>
+        <h2>O essencial, sem letras miúdas.</h2>
+      </div>
+
+      <div class="faq-list" appReveal>
+        @for (item of items; track item.question; let i = $index) {
+          <div class="faq-item" [class.is-open]="openIndex() === i">
+            <h3 class="faq-heading">
+              <button
+                type="button"
+                class="faq-trigger"
+                [id]="'pergunta-' + i"
+                [attr.aria-expanded]="openIndex() === i"
+                [attr.aria-controls]="'resposta-' + i"
+                (click)="toggle(i)"
+              >
+                <span>{{ item.question }}</span>
+                <svg appIcon="chevron-down" class="faq-chevron"></svg>
+              </button>
+            </h3>
+            <div
+              class="faq-panel"
+              role="region"
+              [id]="'resposta-' + i"
+              [attr.aria-labelledby]="'pergunta-' + i"
+            >
+              <div class="faq-panel-inner">
+                <p>{{ item.answer }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

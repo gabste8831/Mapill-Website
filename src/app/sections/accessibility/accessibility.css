@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+.accessibility-band {
+  background: var(--mapill-cartao);
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.access-copy h2 {
+  max-width: 24ch;
+}
+
+.access-copy > p:not(.eyebrow) {
+  margin-top: 22px;
+  color: var(--mapill-texto-secundario);
+  font-size: 17px;
+}
+
+.check-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.check-list li {
+  display: flex;
+  gap: 10px;
+}
+
+.check-list li::before {
+  content: '✓';
+  content: '✓' / '';
+  color: var(--mapill-azul-destaque);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .access-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
