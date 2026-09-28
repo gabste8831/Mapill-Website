@@ -16,15 +16,17 @@
   border-radius: var(--mapill-raio-lg);
   background: var(--mapill-cartao);
   box-shadow: var(--mapill-sombra);
+  /* entrada ao rolar (com o atraso escalonado) + resposta do hover */
   transition:
-    opacity var(--mapill-medio) var(--mapill-curva),
-    translate var(--mapill-medio) var(--mapill-curva),
-    transform var(--mapill-rapido) var(--mapill-curva),
-    box-shadow var(--mapill-rapido) var(--mapill-curva);
+    opacity var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms),
+    translate var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms),
+    scale var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms),
+    transform var(--mapill-medio) var(--mapill-curva),
+    box-shadow var(--mapill-medio) var(--mapill-curva);
 }
 
 .benefit-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: var(--mapill-sombra-elevada);
 }
 
@@ -32,6 +34,52 @@
   width: 24px;
   height: 24px;
   color: var(--mapill-azul-destaque);
+  transition:
+    scale var(--mapill-medio) var(--mapill-curva-enfase),
+    rotate var(--mapill-medio) var(--mapill-curva-enfase);
+}
+
+.benefit-card:hover .benefit-icon {
+  scale: 1.18;
+  rotate: -8deg;
+}
+
+/* O celular dentro do cartão sobe e mostra mais da tela */
+.benefit-phone {
+  transition: translate var(--mapill-lento) var(--mapill-curva);
+}
+
+.benefit-card:hover .benefit-phone {
+  translate: 0 -12px;
+}
+
+/* A barra de estoque se esvazia até o nível atual quando o cartão aparece */
+:host-context(.js) .stock-visual .progress > span {
+  transform-origin: left center;
+  scale: 0 1;
+  transition: scale 1100ms var(--mapill-curva) calc(var(--reveal-delay, 0ms) + 300ms);
+}
+
+:host-context(.js) .is-visible .stock-visual .progress > span {
+  scale: 1 1;
+}
+
+/* Os selos do histórico "carimbam" um depois do outro quando o cartão aparece */
+:host-context(.js) .history-visual app-status-badge {
+  opacity: 0;
+  scale: 0.6;
+  transition:
+    opacity var(--mapill-medio) var(--mapill-curva) calc(var(--reveal-delay, 0ms) + 300ms),
+    scale var(--mapill-lento) var(--mapill-curva-enfase) calc(var(--reveal-delay, 0ms) + 300ms);
+}
+
+:host-context(.js) .history-visual app-status-badge:nth-child(2) {
+  transition-delay: calc(var(--reveal-delay, 0ms) + 460ms);
+}
+
+:host-context(.js) .is-visible .history-visual app-status-badge {
+  opacity: 1;
+  scale: 1;
 }
 
 .benefit-card h3 {

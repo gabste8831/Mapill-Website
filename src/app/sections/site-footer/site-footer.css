@@ -3,65 +3,193 @@
 }
 
 .site-footer {
-  padding-block: 64px;
+  padding-block: 72px 40px;
+  border-top: 1px solid var(--mapill-borda);
   background: var(--mapill-fundo);
 }
 
-.footer-top,
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
-.footer-top p {
+.footer-brand > p {
+  max-width: 30ch;
   margin-top: 14px;
   color: var(--mapill-texto-secundario);
   font-size: 14px;
 }
 
-.footer-top nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  column-gap: 24px;
+.footer-cta {
+  min-height: 44px;
+  margin-top: 20px;
 }
 
-.footer-top a {
+/* Rótulo de coluna: mesmo estilo dos textos de apoio, sem caixa alta */
+.footer-title {
+  margin-bottom: 12px;
+  color: var(--mapill-texto-secundario);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.footer-links a {
+  position: relative;
   display: inline-flex;
   min-height: 44px;
   align-items: center;
+  gap: 8px;
   color: var(--mapill-texto);
-  font-size: 13px;
+  font-size: 14px;
 }
 
-.footer-top a:hover {
+/* Sublinhado que cresce da esquerda no hover */
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--mapill-medio) var(--mapill-curva);
+}
+
+.footer-links a:hover {
   color: var(--mapill-azul-destaque);
 }
 
+.footer-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.footer-contact svg {
+  width: 16px;
+  height: 16px;
+  color: var(--mapill-texto-apoio);
+  transition: color var(--mapill-medio) var(--mapill-curva);
+}
+
+.footer-contact:hover svg {
+  color: currentColor;
+}
+
+.footer-contact::after {
+  left: 24px;
+}
+
 .footer-bottom {
-  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 48px;
   padding-top: 24px;
   border-top: 1px solid var(--mapill-borda);
+}
+
+.footer-legal {
+  display: grid;
+  gap: 4px;
   color: var(--mapill-texto-secundario);
   font-size: 12px;
 }
 
-@media (max-width: 640px) {
-  .footer-top,
+.footer-legal p {
+  line-height: 1.6;
+}
+
+.footer-copy {
+  color: var(--mapill-texto);
+  font-weight: 500;
+}
+
+/* Crédito do desenvolvedor (Gabs.dev), no mesmo formato do projeto Tr Transportes */
+.credit {
+  display: inline-flex;
+  width: max-content;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--mapill-texto-secundario);
+}
+
+.credit-logo {
+  width: 96px;
+  color: var(--mapill-texto);
+  transition: scale var(--mapill-medio) var(--mapill-curva);
+  transform-origin: left center;
+}
+
+.credit-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.credit-text strong {
+  font-weight: 600;
+  transition: color var(--mapill-medio) var(--mapill-curva);
+}
+
+.credit-arrow {
+  width: 14px;
+  height: 14px;
+  transition: translate var(--mapill-medio) var(--mapill-curva);
+}
+
+.credit:hover {
+  --gabs-dev-sufixo: var(--mapill-azul-destaque);
+}
+
+.credit:hover .credit-logo {
+  scale: 1.05;
+}
+
+.credit:hover .credit-text strong {
+  color: var(--mapill-texto);
+}
+
+.credit:hover .credit-arrow {
+  translate: 2px -2px;
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1.2fr;
+    gap: 48px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
   .footer-bottom {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
   }
 
-  .footer-top {
-    gap: 16px;
+  .credit {
+    align-items: flex-end;
   }
 
-  .footer-top nav {
-    flex-direction: column;
-  }
-
-  .footer-bottom {
-    gap: 4px;
+  .credit-logo {
+    transform-origin: right center;
   }
 }

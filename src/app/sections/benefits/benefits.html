@@ -6,7 +6,7 @@
     </div>
 
     <div class="bento-grid">
-      <article class="benefit-card benefit-feature" appReveal>
+      <article class="benefit-card benefit-feature" appReveal="scale">
         <div class="benefit-copy">
           <svg appIcon="bell-ring" filled class="benefit-icon"></svg>
           <h3>Alarme que acorda o celular.</h3>
@@ -20,7 +20,7 @@
         </app-phone-frame>
       </article>
 
-      <article class="benefit-card" appReveal>
+      <article class="benefit-card" appReveal="scale" [revealDelay]="100">
         <div class="history-visual">
           <app-status-badge status="tomada" />
           <app-status-badge status="atrasada" />
@@ -29,7 +29,7 @@
         <p>Cada dose fica registrada como tomada, pulada ou atrasada.</p>
       </article>
 
-      <article class="benefit-card" appReveal>
+      <article class="benefit-card" appReveal="scale" [revealDelay]="200">
         <div class="stock-visual">
           <strong>6</strong>
           <span>comprimidos</span>
@@ -39,19 +39,19 @@
         <p>Aviso antes de acabar, não depois.</p>
       </article>
 
-      <article class="benefit-card" appReveal>
+      <article class="benefit-card" appReveal="scale">
         <svg appIcon="file-text" filled class="benefit-icon"></svg>
         <h3>Receita no radar.</h3>
         <p>Você recebe o aviso a tempo de marcar a consulta.</p>
       </article>
 
-      <article class="benefit-card" appReveal>
+      <article class="benefit-card" appReveal="scale" [revealDelay]="100">
         <svg appIcon="calendar-days" filled class="benefit-icon"></svg>
         <h3>Consultas e exames.</h3>
         <p>Compromissos junto dos remédios, com lembrete.</p>
       </article>
 
-      <article class="benefit-card benefit-health" appReveal>
+      <article class="benefit-card benefit-health" appReveal="scale" [revealDelay]="200">
         <div class="benefit-copy">
           <svg appIcon="heart-pulse" filled class="benefit-icon"></svg>
           <h3>Ficha de saúde de bolso.</h3>
@@ -62,13 +62,13 @@
         </app-phone-frame>
       </article>
 
-      <article class="benefit-card benefit-wide" appReveal>
+      <article class="benefit-card benefit-wide" appReveal="scale">
         <svg appIcon="wifi-off" class="benefit-icon"></svg>
         <h3>Funciona sem internet.</h3>
         <p>Tudo é salvo primeiro no celular. A conexão é opcional, só para o backup.</p>
       </article>
 
-      <article class="benefit-card benefit-wide" appReveal>
+      <article class="benefit-card benefit-wide" appReveal="scale" [revealDelay]="100">
         <svg appIcon="file-down" filled class="benefit-icon"></svg>
         <h3>Relatório em PDF.</h3>
         <p>Leve à consulta um resumo do tratamento e da adesão.</p>

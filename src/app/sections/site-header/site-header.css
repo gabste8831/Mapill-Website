@@ -11,7 +11,9 @@
   background: color-mix(in srgb, var(--mapill-fundo) 85%, transparent);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  transition: box-shadow var(--mapill-rapido) var(--mapill-curva);
+  transition:
+    box-shadow var(--mapill-medio) var(--mapill-curva),
+    background-color var(--mapill-medio) var(--mapill-curva);
 }
 
 .site-nav.is-scrolled {
@@ -34,7 +36,9 @@
   gap: 28px;
 }
 
+/* Sublinhado azul que cresce do centro no hover */
 .nav-links a {
+  position: relative;
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -42,14 +46,54 @@
   font-size: 14px;
 }
 
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--mapill-azul-destaque);
+  transform: scaleX(0);
+  transition: transform var(--mapill-medio) var(--mapill-curva);
+}
+
 .nav-links a:hover {
   color: var(--mapill-azul-destaque);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-cta {
   min-height: 44px;
   flex-shrink: 0;
   padding-inline: 20px;
+}
+
+.scroll-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  overflow: hidden;
+}
+
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  background: var(--mapill-gradiente-azul);
+  transform: scaleX(0);
+  transform-origin: left center;
 }
 
 @media (min-width: 768px) {
@@ -59,5 +103,15 @@
 
   .nav-links {
     display: flex;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .nav-cta {
+    padding-inline: 14px;
   }
 }

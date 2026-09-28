@@ -10,6 +10,12 @@ export const SITE_CONFIG = {
 
   contactEmail: 'contato@mapill.app',
 
+  /** Crédito do desenvolvedor no rodapé */
+  developer: {
+    name: 'Gabriel Steffens',
+    portfolioUrl: 'https://gabrielsteffens.vercel.app',
+  },
+
   /** Links do rodapé. Vazio esconde o link até a página existir. */
   termsUrl: '',
   privacyUrl: '',

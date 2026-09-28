@@ -5,10 +5,10 @@
       <h2>Feito primeiro para quem mais precisa de clareza.</h2>
     </div>
 
-    <div class="audience-grid" appReveal>
-      @for (group of groups; track group.title) {
-        <article>
-          <svg [appIcon]="group.icon" filled></svg>
+    <div class="audience-grid">
+      @for (group of groups; track group.title; let i = $index) {
+        <article appReveal [revealDelay]="i * 120">
+          <span class="audience-icon"><svg [appIcon]="group.icon" filled></svg></span>
           <h3>{{ group.title }}</h3>
           <p>{{ group.text }}</p>
         </article>

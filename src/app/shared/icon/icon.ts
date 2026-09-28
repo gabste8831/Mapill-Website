@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, booleanAttribute, input } from '@an
 
 export type IconName =
   | 'arrow-down'
+  | 'arrow-up-right'
   | 'bell-ring'
   | 'calendar-days'
   | 'camera'
@@ -12,9 +13,12 @@ export type IconName =
   | 'file-down'
   | 'file-text'
   | 'heart-pulse'
+  | 'mail'
+  | 'moon'
   | 'pill'
   | 'pill-bottle'
   | 'shield-check'
+  | 'sun'
   | 'triangle-alert'
   | 'users'
   | 'wifi-off';
@@ -41,6 +45,7 @@ export type IconName =
     'stroke-linejoin': 'round',
     'aria-hidden': 'true',
     focusable: 'false',
+    '[attr.data-icon]': 'appIcon()',
     '[class.icon-filled]': 'filled()',
   },
 })

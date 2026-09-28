@@ -1,0 +1,11 @@
+<button
+  type="button"
+  class="theme-toggle"
+  aria-label="Tema escuro"
+  [attr.aria-pressed]="isDark()"
+  [title]="isDark() ? 'Usar tema claro' : 'Usar tema escuro'"
+  (click)="toggle($event)"
+>
+  <svg appIcon="moon" class="icon-moon"></svg>
+  <svg appIcon="sun" class="icon-sun"></svg>
+</button>

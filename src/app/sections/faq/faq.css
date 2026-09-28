@@ -9,7 +9,27 @@
 }
 
 .faq-item {
+  position: relative;
   border-bottom: 1px solid var(--mapill-borda);
+}
+
+/* Filete azul à esquerda na pergunta em foco (hover) ou aberta */
+.faq-item::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: -16px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--mapill-azul-destaque);
+  scale: 1 0;
+  transition: scale var(--mapill-medio) var(--mapill-curva);
+}
+
+.faq-item:hover::before,
+.faq-item.is-open::before {
+  scale: 1 1;
 }
 
 .faq-trigger {
@@ -32,11 +52,25 @@
   color: var(--mapill-azul-destaque);
 }
 
+.faq-trigger span {
+  transition: translate var(--mapill-medio) var(--mapill-curva);
+}
+
+.faq-trigger:hover span {
+  translate: 6px 0;
+}
+
 .faq-chevron {
   width: 16px;
   height: 16px;
   color: var(--mapill-texto-secundario);
-  transition: transform var(--mapill-medio) var(--mapill-curva);
+  transition:
+    transform var(--mapill-medio) var(--mapill-curva),
+    color var(--mapill-medio) var(--mapill-curva);
+}
+
+.faq-trigger:hover .faq-chevron {
+  color: var(--mapill-azul-destaque);
 }
 
 .is-open .faq-chevron {

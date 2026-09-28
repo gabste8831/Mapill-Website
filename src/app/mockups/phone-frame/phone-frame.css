@@ -17,10 +17,8 @@
 }
 
 /* No tema escuro, um contorno sutil separa a moldura do fundo */
-@media (prefers-color-scheme: dark) {
-  :host {
-    border-color: var(--mapill-borda);
-  }
+:host-context([data-theme='dark']) {
+  border-color: var(--mapill-borda);
 }
 
 .phone-speaker {

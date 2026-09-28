@@ -10,12 +10,25 @@
   align-items: center;
 }
 
-picture {
-  display: flex;
-}
-
 .brand-lockup {
   display: block;
   width: 106px;
   height: auto;
+  transition: scale var(--mapill-medio) var(--mapill-curva);
+}
+
+.brand-logo:hover .brand-lockup {
+  scale: 1.04;
+}
+
+.logo-escuro {
+  display: none;
+}
+
+:host-context([data-theme='dark']) .logo-claro {
+  display: none;
+}
+
+:host-context([data-theme='dark']) .logo-escuro {
+  display: block;
 }

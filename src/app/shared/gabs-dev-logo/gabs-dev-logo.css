@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  height: auto;
+}
+
+.gabs-dev-nome {
+  fill: currentColor;
+}
+
+.gabs-dev-sufixo {
+  fill: var(--gabs-dev-sufixo, var(--mapill-texto-apoio));
+  transition: fill var(--mapill-medio) var(--mapill-curva);
+}

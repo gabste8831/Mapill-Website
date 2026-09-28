@@ -31,6 +31,22 @@
   height: 30px;
 }
 
+/* No hover da introdução, o escudo balança como um "ok" */
+.privacy-intro:hover .shield-mark svg {
+  animation: escudo-balanca 620ms var(--mapill-curva);
+}
+
+@keyframes escudo-balanca {
+  30% {
+    rotate: -12deg;
+    scale: 1.1;
+  }
+
+  60% {
+    rotate: 8deg;
+  }
+}
+
 .privacy-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -49,6 +65,11 @@
   height: 20px;
   margin-top: 3px;
   color: var(--mapill-azul-destaque);
+  transition: scale var(--mapill-medio) var(--mapill-curva-enfase);
+}
+
+.privacy-grid li:hover svg {
+  scale: 1.25;
 }
 
 @media (max-width: 640px) {

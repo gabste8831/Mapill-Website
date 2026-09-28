@@ -5,7 +5,7 @@
       <h2>Do cadastro ao cuidado diário, sem complicação.</h2>
     </div>
 
-    <div class="timeline">
+    <div class="timeline" appReveal="none">
       <article class="timeline-step" appReveal>
         <div class="step-number" aria-hidden="true">1</div>
         <div class="step-copy">
@@ -20,7 +20,7 @@
         </app-phone-frame>
       </article>
 
-      <article class="timeline-step" appReveal>
+      <article class="timeline-step" appReveal [revealDelay]="150">
         <div class="step-number" aria-hidden="true">2</div>
         <div class="step-copy">
           <h3>Receba o alarme.</h3>
@@ -33,7 +33,7 @@
         </app-phone-frame>
       </article>
 
-      <article class="timeline-step" appReveal>
+      <article class="timeline-step" appReveal [revealDelay]="300">
         <div class="step-number" aria-hidden="true">3</div>
         <div class="step-copy">
           <h3>Acompanhe sem pensar.</h3>

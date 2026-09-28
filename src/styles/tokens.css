@@ -58,36 +58,39 @@
   --mapill-rapido: 140ms;
   --mapill-medio: 280ms;
   --mapill-lento: 420ms;
+  --mapill-entrada: 560ms; /* blocos entrando ao rolar */
   --mapill-curva: cubic-bezier(0.33, 1, 0.68, 1);
   --mapill-curva-enfase: cubic-bezier(0.34, 1.56, 0.64, 1); /* só no check de dose tomada */
 }
 
-/* Tema escuro automático. No escuro, a superfície mais alta é a mais clara. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --mapill-azul-destaque: #7fb2ff;
-    --mapill-azul-diluido: #16233a;
-    --mapill-azul-diluido-texto: #b9d3ff;
-    --mapill-fundo: #0f1319;
-    --mapill-cartao: #191f27;
-    --mapill-apoio: #222933;
-    --mapill-superficie: #2a323d;
-    --mapill-texto: #e6e9ee;
-    --mapill-texto-secundario: #aeb6c4;
-    --mapill-texto-apoio: #9aa4b2;
-    --mapill-borda: #3c4553;
-    --mapill-sucesso: #68de94;
-    --mapill-sucesso-vivo: #68de94;
-    --mapill-sucesso-fundo: #173523;
-    --mapill-sucesso-texto: #68de94;
-    --mapill-erro: #ff9a92;
-    --mapill-erro-fundo: #3c1c20;
-    --mapill-erro-texto: #ff9a92;
-    --mapill-atencao: #f5b54a;
-    --mapill-atencao-fundo: #382f14;
-    --mapill-atencao-texto: #f5b54a;
-    --mapill-sombra: 0 1px 3px rgba(0, 0, 0, 0.36);
-    --mapill-sombra-elevada: 0 2px 8px rgba(0, 0, 0, 0.4);
-  }
+/*
+ * Tema escuro. O script do index.html define data-theme no <html> antes da primeira pintura:
+ * a escolha salva pela pessoa ou, sem escolha, a preferência do sistema.
+ * No escuro, a superfície mais alta é a mais clara.
+ */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --mapill-azul-destaque: #7fb2ff;
+  --mapill-azul-diluido: #16233a;
+  --mapill-azul-diluido-texto: #b9d3ff;
+  --mapill-fundo: #0f1319;
+  --mapill-cartao: #191f27;
+  --mapill-apoio: #222933;
+  --mapill-superficie: #2a323d;
+  --mapill-texto: #e6e9ee;
+  --mapill-texto-secundario: #aeb6c4;
+  --mapill-texto-apoio: #9aa4b2;
+  --mapill-borda: #3c4553;
+  --mapill-sucesso: #68de94;
+  --mapill-sucesso-vivo: #68de94;
+  --mapill-sucesso-fundo: #173523;
+  --mapill-sucesso-texto: #68de94;
+  --mapill-erro: #ff9a92;
+  --mapill-erro-fundo: #3c1c20;
+  --mapill-erro-texto: #ff9a92;
+  --mapill-atencao: #f5b54a;
+  --mapill-atencao-fundo: #382f14;
+  --mapill-atencao-texto: #f5b54a;
+  --mapill-sombra: 0 1px 3px rgba(0, 0, 0, 0.36);
+  --mapill-sombra-elevada: 0 2px 8px rgba(0, 0, 0, 0.4);
 }

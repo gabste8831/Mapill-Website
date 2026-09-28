@@ -64,5 +64,11 @@ public/
   privacidade e perguntas frequentes) ficam no `.ts` da seção.
 - **Cores e tipografia:** `src/styles/tokens.css`. As cores já passam no contraste WCAG AA; ao
   trocar alguma, refaça a conta.
-- **Links e download:** `src/app/core/site-config.ts`. Os links de termos de uso e política de
-  privacidade só aparecem no rodapé quando o endereço for preenchido.
+- **Links, download e crédito:** `src/app/core/site-config.ts`. Os links de termos de uso e
+  política de privacidade só aparecem no rodapé quando o endereço for preenchido; o crédito do
+  desenvolvedor (Gabs.dev) aponta para o portfólio definido em `developer.portfolioUrl`.
+- **Tema claro/escuro:** o botão do cabeçalho alterna e salva a escolha (`localStorage`, chave
+  `mapill-tema`). Sem escolha salva, a página segue o tema do sistema. A lógica fica em
+  `src/app/core/theme.service.ts` e o script que evita piscar ao carregar, em `src/index.html`.
+- **Efeitos de rolagem:** use `appReveal` (`up`, `left`, `right`, `scale`) e `[revealDelay]` para
+  escalonar itens. Com "reduzir movimento" ativo no sistema, todas as animações são desligadas.

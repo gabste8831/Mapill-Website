@@ -10,6 +10,10 @@
 - Tokens da identidade visual aplicados (cores, estados, raios, sombras, movimento e tema escuro)
 - Botões de download apontando para o APK, com orientação de instalação no FAQ
 - Correções de CSS: botão do cabeçalho com texto branco, telas de alarme legíveis em todos os tamanhos, divisórias do FAQ, última linha dos benefícios e microcópia do hero no celular
+- Botão de tema claro/escuro no cabeçalho, com a escolha salva e transição em círculo
+- Efeitos de rolagem (entradas escalonadas, linha do tempo desenhada, parallax no hero, barra de progresso) e hovers em links, botões, cartões e ícones
+- Rodapé em colunas com navegação, contato e crédito ao Gabs.dev com link para o portfólio
+- Correção do erro TS5011 do `tsconfig.app.json` no TypeScript 6 do VS Code
 
 ## Em andamento
 - Nada em andamento

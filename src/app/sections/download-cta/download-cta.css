@@ -48,6 +48,70 @@ h2 {
   height: 440px;
   flex-shrink: 0;
   transform: rotate(3deg);
+  transition: translate var(--mapill-lento) var(--mapill-curva);
+}
+
+.final-cta:hover .cta-phone {
+  translate: 0 -10px;
+}
+
+.cta-capsule {
+  --icon-recorte: #1f6fe8;
+
+  position: absolute;
+  z-index: 0;
+  bottom: -120px;
+  left: -70px;
+  width: 280px;
+  height: 280px;
+  color: #fff;
+  opacity: 0.08;
+  stroke-width: 1.2;
+  rotate: -20deg;
+  transition: rotate 900ms var(--mapill-curva);
+}
+
+.final-cta:hover .cta-capsule {
+  rotate: -8deg;
+}
+
+/* Ao rolar, o celular se endireita e a cápsula gira devagar */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .cta-phone {
+      animation: cta-celular linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 45%;
+    }
+
+    .cta-capsule {
+      animation: cta-capsula linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+  }
+}
+
+@keyframes cta-celular {
+  from {
+    rotate: 9deg;
+    scale: 0.92;
+  }
+
+  to {
+    rotate: 0deg;
+    scale: 1;
+  }
+}
+
+@keyframes cta-capsula {
+  from {
+    translate: 0 40px;
+  }
+
+  to {
+    translate: 60px -40px;
+  }
 }
 
 /* Em telas menores ele vira marca-d'água atrás do texto */

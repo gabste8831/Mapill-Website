@@ -1,14 +1,19 @@
 <section id="perguntas" class="section-space">
   <div class="container">
     <div class="faq-layout">
-      <div appReveal>
+      <div appReveal="left">
         <p class="eyebrow">Perguntas frequentes</p>
         <h2>O essencial, sem letras miúdas.</h2>
       </div>
 
-      <div class="faq-list" appReveal>
+      <div class="faq-list">
         @for (item of items; track item.question; let i = $index) {
-          <div class="faq-item" [class.is-open]="openIndex() === i">
+          <div
+            class="faq-item"
+            [class.is-open]="openIndex() === i"
+            appReveal
+            [revealDelay]="i * 70"
+          >
             <h3 class="faq-heading">
               <button
                 type="button"

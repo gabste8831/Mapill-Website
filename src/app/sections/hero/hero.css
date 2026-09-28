@@ -81,6 +81,102 @@ h1 {
   transform: rotate(3deg);
 }
 
+.hero-phone,
+.alarm-phone {
+  transition: scale var(--mapill-lento) var(--mapill-curva);
+}
+
+.hero-phone:hover,
+.alarm-phone:hover {
+  scale: 1.02;
+}
+
+/* Entrada ao carregar: o texto sobe em sequência e os celulares deslizam da direita */
+.hero-copy > * {
+  animation: hero-sobe 640ms var(--mapill-curva) both;
+}
+
+.hero-copy > :nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.hero-copy > :nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.hero-copy > :nth-child(4) {
+  animation-delay: 240ms;
+}
+
+.hero-copy > :nth-child(5) {
+  animation-delay: 320ms;
+}
+
+.phone-stage {
+  animation: hero-celulares 900ms var(--mapill-curva) 200ms both;
+}
+
+@keyframes hero-sobe {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+  }
+}
+
+@keyframes hero-celulares {
+  from {
+    opacity: 0;
+    translate: 48px 0;
+  }
+}
+
+/*
+ * Parallax ao rolar: o celular da frente sobe mais rápido que o de trás e o texto se afasta.
+ * Só no layout de duas colunas, em navegadores com animações ligadas ao scroll e sem pedido de
+ * menos movimento.
+ */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+    .hero-copy {
+      animation: hero-texto-sai linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 80vh;
+    }
+
+    .hero-phone {
+      animation: hero-frente linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 90vh;
+    }
+
+    .alarm-phone {
+      animation: hero-fundo linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 90vh;
+    }
+  }
+}
+
+@keyframes hero-texto-sai {
+  to {
+    opacity: 0.35;
+    translate: 0 -40px;
+  }
+}
+
+@keyframes hero-frente {
+  to {
+    translate: 0 -70px;
+  }
+}
+
+@keyframes hero-fundo {
+  to {
+    translate: 0 30px;
+    rotate: 4deg;
+  }
+}
+
 @media (min-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1.03fr 0.97fr;

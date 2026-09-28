@@ -8,9 +8,9 @@
       </div>
     </div>
 
-    <ul class="privacy-grid" appReveal>
-      @for (promise of promises; track promise) {
-        <li><svg appIcon="check"></svg>{{ promise }}</li>
+    <ul class="privacy-grid">
+      @for (promise of promises; track promise; let i = $index) {
+        <li appReveal [revealDelay]="i * 100"><svg appIcon="check"></svg>{{ promise }}</li>
       }
     </ul>
   </div>

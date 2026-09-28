@@ -10,8 +10,7 @@
       content="Lembre cada dose, acompanhe o tratamento e receba avisos antes do remédio acabar. Mapill para Android."
     />
     <meta name="author" content="Mapill" />
-    <meta name="theme-color" content="#F1F4F8" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0F1319" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F1F4F8" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -32,9 +31,31 @@
       rel="stylesheet"
     />
 
-    <!-- Com JavaScript ativo, os blocos .reveal começam ocultos e entram ao rolar. Sem JS, tudo aparece. -->
+    <!--
+      Roda antes da primeira pintura:
+      - classe .js: os blocos .reveal começam ocultos e entram ao rolar (sem JS, tudo aparece);
+      - data-theme: tema salvo pela pessoa ou, sem escolha, o do sistema. Evita piscar no tema errado.
+      Manter a chave e as cores em sincronia com src/app/core/theme.service.ts.
+    -->
     <script>
-      document.documentElement.classList.add('js');
+      (function () {
+        var root = document.documentElement;
+        var saved = null;
+        root.classList.add('js');
+        try {
+          saved = localStorage.getItem('mapill-tema');
+        } catch (e) {}
+        var theme =
+          saved === 'dark' || saved === 'light'
+            ? saved
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        root.setAttribute('data-theme', theme);
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute('content', theme === 'dark' ? '#0F1319' : '#F1F4F8');
+      })();
     </script>
   </head>
   <body>

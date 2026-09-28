@@ -9,6 +9,14 @@
       <a href="#perguntas">Perguntas</a>
     </div>
 
-    <a class="btn btn-primary nav-cta" [href]="site.apkUrl" download>Baixar APK</a>
+    <div class="nav-actions">
+      <app-theme-toggle />
+      <a class="btn btn-primary nav-cta" [href]="site.apkUrl" download>Baixar APK</a>
+    </div>
   </nav>
+
+  <!-- Barra de progresso da leitura: só visual, a posição na página não depende dela -->
+  <div class="scroll-progress" aria-hidden="true">
+    <span #progressBar></span>
+  </div>
 </header>

@@ -23,6 +23,7 @@
 }
 
 .theme-tabs button:hover {
+  background: color-mix(in srgb, var(--mapill-cartao) 60%, transparent);
   color: var(--mapill-texto);
 }
 
@@ -52,6 +53,23 @@
 
 .theme-demo app-dose-card {
   width: min(330px, 100%);
+  transition:
+    translate var(--mapill-lento) var(--mapill-curva),
+    background-color var(--mapill-medio) var(--mapill-curva),
+    color var(--mapill-medio) var(--mapill-curva),
+    box-shadow var(--mapill-medio) var(--mapill-curva);
+}
+
+.theme-demo:hover app-dose-card {
+  translate: 0 -4px;
+}
+
+.state-legend app-status-badge {
+  transition: scale var(--mapill-medio) var(--mapill-curva-enfase);
+}
+
+.state-legend app-status-badge:hover {
+  scale: 1.08;
 }
 
 .state-legend {

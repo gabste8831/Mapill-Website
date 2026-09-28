@@ -1,25 +1,67 @@
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-top">
-      <div>
+    <div class="footer-grid">
+      <div class="footer-brand" appReveal>
         <app-logo />
         <p>Mapill. Adesão a medicamentos, feita com cuidado.</p>
+        <a class="btn btn-primary footer-cta" [href]="site.apkUrl" download>
+          <svg appIcon="download"></svg>
+          Baixar APK
+        </a>
       </div>
 
-      <nav aria-label="Links do rodapé">
-        @if (site.termsUrl) {
-          <a [href]="site.termsUrl">Termos de uso</a>
-        }
-        @if (site.privacyUrl) {
-          <a [href]="site.privacyUrl">Política de privacidade</a>
-        }
-        <a [href]="'mailto:' + site.contactEmail">Contato</a>
+      <nav class="footer-col" aria-labelledby="rodape-navegacao" appReveal [revealDelay]="100">
+        <p class="footer-title" id="rodape-navegacao">Navegação</p>
+        <ul class="footer-links">
+          @for (section of sections; track section.href) {
+            <li>
+              <a [href]="section.href">{{ section.label }}</a>
+            </li>
+          }
+        </ul>
       </nav>
+
+      <div class="footer-col" appReveal [revealDelay]="200">
+        <p class="footer-title">Contato</p>
+        <ul class="footer-links">
+          <li>
+            <a class="footer-contact" [href]="'mailto:' + site.contactEmail">
+              <svg appIcon="mail"></svg>
+              {{ site.contactEmail }}
+            </a>
+          </li>
+          @if (site.termsUrl) {
+            <li><a [href]="site.termsUrl">Termos de uso</a></li>
+          }
+          @if (site.privacyUrl) {
+            <li><a [href]="site.privacyUrl">Política de privacidade</a></li>
+          }
+        </ul>
+      </div>
     </div>
 
     <div class="footer-bottom">
-      <p>O Mapill não substitui orientação médica. Em caso de emergência, ligue 192.</p>
-      <p>Desenvolvido como Trabalho de Conclusão de Curso em Sistemas de Informação, UNIDAVI.</p>
+      <div class="footer-legal">
+        <p class="footer-copy">© {{ year }} Mapill. Todos os direitos reservados.</p>
+        <p>O Mapill não substitui orientação médica. Em caso de emergência, ligue 192.</p>
+        <p>Desenvolvido como Trabalho de Conclusão de Curso em Sistemas de Informação, UNIDAVI.</p>
+      </div>
+
+      <a
+        class="credit"
+        [href]="site.developer.portfolioUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="
+          'Desenvolvido por ' + site.developer.name + ', Gabs.dev. Abre o portfólio em nova aba'
+        "
+      >
+        <svg appGabsDevLogo class="credit-logo"></svg>
+        <span class="credit-text">
+          Desenvolvido por <strong>{{ site.developer.name }}</strong>
+          <svg appIcon="arrow-up-right" class="credit-arrow"></svg>
+        </span>
+      </a>
     </div>
   </div>
 </footer>

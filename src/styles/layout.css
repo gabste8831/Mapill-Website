@@ -43,18 +43,49 @@
   top: 12px;
 }
 
-/* Com JS ativo (classe .js no <html>), o bloco sobe e aparece uma única vez */
+/*
+ * Entrada ao rolar (diretiva appReveal). Com JS ativo (classe .js no <html>), o bloco começa
+ * deslocado e transparente e aparece uma única vez. Usa as propriedades translate/scale, e não
+ * transform, para não brigar com os efeitos de hover dos componentes.
+ */
 .js .reveal {
   opacity: 0;
-  translate: 0 14px;
+  translate: 0 28px;
   transition:
-    opacity var(--mapill-medio) var(--mapill-curva),
-    translate var(--mapill-medio) var(--mapill-curva);
+    opacity var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms),
+    translate var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms),
+    scale var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms);
+}
+
+.js .reveal[data-reveal='left'] {
+  translate: -40px 0;
+}
+
+.js .reveal[data-reveal='right'] {
+  translate: 40px 0;
+}
+
+.js .reveal[data-reveal='scale'] {
+  translate: 0 16px;
+  scale: 0.95;
+}
+
+.js .reveal[data-reveal='none'] {
+  opacity: 1;
+  translate: none;
 }
 
 .js .reveal.is-visible {
   opacity: 1;
   translate: none;
+  scale: none;
+}
+
+/* Troca de tema: o novo tema se abre em círculo (a animação é feita no ThemeService) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 @media (min-width: 640px) {
@@ -95,5 +126,6 @@
   .js .reveal {
     opacity: 1;
     translate: none;
+    scale: none;
   }
 }

@@ -1,0 +1,5 @@
+# Fim de linha LF em todos os arquivos de texto, igual ao que o Prettier grava
+* text=auto eol=lf
+
+*.png binary
+*.apk binary
