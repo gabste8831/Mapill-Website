@@ -1,4 +1,8 @@
 <div class="phone-speaker"></div>
 <div class="phone-screen">
-  <ng-content />
+  @if (src()) {
+    <img class="phone-shot" [src]="src()" alt="" loading="lazy" />
+  } @else {
+    <ng-content />
+  }
 </div>

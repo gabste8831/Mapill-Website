@@ -5,6 +5,7 @@ import { AdherenceScreen } from '../../mockups/screens/adherence-screen/adherenc
 import { AlarmScreen } from '../../mockups/screens/alarm-screen/alarm-screen';
 import { ScannerScreen } from '../../mockups/screens/scanner-screen/scanner-screen';
 import { StockScreen } from '../../mockups/screens/stock-screen/stock-screen';
+import { SITE_CONFIG } from '../../core/site-config';
 
 @Component({
   selector: 'app-how-it-works',
@@ -13,4 +14,6 @@ import { StockScreen } from '../../mockups/screens/stock-screen/stock-screen';
   styleUrl: './how-it-works.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HowItWorks {}
+export class HowItWorks {
+  protected readonly shots = SITE_CONFIG.screenshots;
+}

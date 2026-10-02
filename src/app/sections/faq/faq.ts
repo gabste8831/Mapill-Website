@@ -43,7 +43,8 @@ export class Faq {
     },
     {
       question: 'Meus dados são compartilhados com alguém?',
-      answer: 'Não. Seus dados ficam no celular e o backup na nuvem é opcional.',
+      answer:
+        'Não. Seus dados ficam no celular e o backup na conta Google é opcional. O tratamento segue a LGPD, não há anúncio nem venda de dados, e apagar tudo é um botão.',
     },
   ];
 

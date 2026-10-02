@@ -1,0 +1,35 @@
+<section id="videos" class="section-space">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <p class="eyebrow">Veja funcionando</p>
+      <h2>Aprenda a usar em poucos minutos.</h2>
+    </div>
+
+    <div class="video-grid">
+      @for (video of videos; track video.title; let i = $index) {
+        <article class="video-card" appReveal [revealDelay]="i * 100">
+          <div class="video-frame">
+            @if (!video.id) {
+              <div class="video-soon"><span>Em breve</span></div>
+            } @else if (playing() === i) {
+              <iframe
+                [src]="embed(video.id)"
+                [title]="video.title"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            } @else {
+              <button type="button" class="video-play" (click)="play(i)">
+                <img [src]="thumb(video.id)" alt="" loading="lazy" />
+                <span class="video-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span>
+                <span class="sr-only">Assistir: {{ video.title }}</span>
+              </button>
+            }
+          </div>
+          <h3>{{ video.title }}</h3>
+          <p>{{ video.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

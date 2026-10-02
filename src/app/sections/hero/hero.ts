@@ -13,5 +13,6 @@ import { Icon } from '../../shared/icon/icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Hero {
+  protected readonly shots = SITE_CONFIG.screenshots;
   protected readonly site = SITE_CONFIG;
 }

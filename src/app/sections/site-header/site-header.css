@@ -33,7 +33,7 @@
   min-width: 0;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 22px;
 }
 
 /* Sublinhado azul que cresce do centro no hover */
@@ -114,4 +114,9 @@
   .nav-cta {
     padding-inline: 14px;
   }
+}
+
+.nav-links a.is-active {
+  color: var(--mapill-azul-destaque);
+  font-weight: 600;
 }

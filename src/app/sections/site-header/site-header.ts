@@ -6,6 +6,7 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SITE_CONFIG } from '../../core/site-config';
 import { Logo } from '../../shared/logo/logo';
 import { ThemeToggle } from '../../shared/theme-toggle/theme-toggle';
@@ -13,7 +14,7 @@ import { ThemeToggle } from '../../shared/theme-toggle/theme-toggle';
 /** Barra fixa. A sombra aparece depois do primeiro scroll e a barra fina mostra o progresso. */
 @Component({
   selector: 'app-site-header',
-  imports: [Logo, ThemeToggle],
+  imports: [RouterLink, RouterLinkActive, Logo, ThemeToggle],
   templateUrl: './site-header.html',
   styleUrl: './site-header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

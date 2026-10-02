@@ -1,4 +1,4 @@
-<section class="section-space">
+<section id="recursos" class="section-space">
   <div class="container">
     <div class="section-heading" appReveal>
       <p class="eyebrow">Cuidado completo</p>
@@ -15,7 +15,7 @@
             aparelho bloqueado.
           </p>
         </div>
-        <app-phone-frame class="benefit-phone" label="Alarme do Mapill">
+        <app-phone-frame class="benefit-phone" label="Alarme do Mapill" [src]="shots.alarme">
           <app-alarm-screen />
         </app-phone-frame>
       </article>
@@ -57,7 +57,7 @@
           <h3>Ficha de saúde de bolso.</h3>
           <p>Alergias, condições, tipo sanguíneo e contatos prontos para mostrar.</p>
         </div>
-        <app-phone-frame class="benefit-phone" label="Ficha de saúde">
+        <app-phone-frame class="benefit-phone" label="Ficha de saúde" [src]="shots.saude">
           <app-health-screen />
         </app-phone-frame>
       </article>
@@ -73,6 +73,27 @@
         <h3>Relatório em PDF.</h3>
         <p>Leve à consulta um resumo do tratamento e da adesão.</p>
       </article>
+    </div>
+    <div class="use-cases">
+      <div class="section-heading" appReveal>
+        <p class="eyebrow">Na vida real</p>
+        <h3 class="use-cases-title">Feito para o dia a dia de quem trata algo contínuo.</h3>
+      </div>
+      <div class="use-case-grid">
+        @for (item of useCases; track item.title; let i = $index) {
+          <figure class="use-case" appReveal [revealDelay]="i * 120">
+            <div class="use-case-photo">
+              @if (item.image) {
+                <img [src]="item.image" [alt]="item.alt" loading="lazy" />
+              }
+            </div>
+            <figcaption>
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.text }}</p>
+            </figcaption>
+          </figure>
+        }
+      </div>
     </div>
   </div>
 </section>

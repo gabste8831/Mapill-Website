@@ -29,10 +29,10 @@
 
     <div class="phone-stage" aria-hidden="true">
       <div class="phone-halo"></div>
-      <app-phone-frame class="hero-phone" label="Tela inicial do Mapill">
+      <app-phone-frame class="hero-phone" label="Tela inicial do Mapill" [src]="shots.hoje">
         <app-today-screen animate />
       </app-phone-frame>
-      <app-phone-frame class="alarm-phone" label="Tela de alarme do Mapill">
+      <app-phone-frame class="alarm-phone" label="Tela de alarme do Mapill" [src]="shots.alarme">
         <app-alarm-screen />
       </app-phone-frame>
     </div>

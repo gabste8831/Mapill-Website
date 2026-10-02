@@ -16,4 +16,6 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class PhoneFrame {
   readonly label = input.required<string>();
+  /** Print real do app. Vazio mostra a tela simulada projetada no conteúdo. */
+  readonly src = input('');
 }

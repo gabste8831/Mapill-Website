@@ -13,11 +13,12 @@
       <nav class="footer-col" aria-labelledby="rodape-navegacao" appReveal [revealDelay]="100">
         <p class="footer-title" id="rodape-navegacao">Navegação</p>
         <ul class="footer-links">
-          @for (section of sections; track section.href) {
+          @for (section of sections; track section.fragment) {
             <li>
-              <a [href]="section.href">{{ section.label }}</a>
+              <a routerLink="/" [fragment]="section.fragment">{{ section.label }}</a>
             </li>
           }
+          <li><a routerLink="/documentacao">Documentação</a></li>
         </ul>
       </nav>
 

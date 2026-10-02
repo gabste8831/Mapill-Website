@@ -1,0 +1,113 @@
+<section class="docs section-space">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Documentação</p>
+      <h1>Como cada parte do Mapill funciona.</h1>
+      <p class="docs-lead">Escolha um assunto e veja o passo a passo.</p>
+    </div>
+
+    <div class="docs-layout">
+      <div
+        class="docs-tabs"
+        role="tablist"
+        aria-label="Assuntos"
+        aria-orientation="vertical"
+        (keydown)="onKeydown($event)"
+      >
+        @for (topic of topics; track topic.id; let i = $index) {
+          <button
+            type="button"
+            role="tab"
+            class="docs-tab"
+            [id]="'aba-' + topic.id"
+            [class.is-active]="activeIndex() === i"
+            [attr.aria-selected]="activeIndex() === i"
+            aria-controls="painel-docs"
+            [tabindex]="activeIndex() === i ? 0 : -1"
+            (click)="select(i)"
+          >
+            <svg [appIcon]="topic.icon" class="docs-tab-icon"></svg>
+            <span>{{ topic.label }}</span>
+          </button>
+        }
+      </div>
+
+      <div
+        class="docs-panel"
+        id="painel-docs"
+        role="tabpanel"
+        [attr.aria-labelledby]="'aba-' + active().id"
+      >
+        @for (current of [active()]; track current.id) {
+          <article class="docs-article">
+            <div class="docs-copy">
+              <h2>{{ current.title }}</h2>
+              <p class="docs-intro">{{ current.intro }}</p>
+
+              <ol class="docs-steps">
+                @for (step of current.steps; track step) {
+                  <li>{{ step }}</li>
+                }
+              </ol>
+
+              @if (current.tips) {
+                <aside class="docs-tip">
+                  <svg appIcon="triangle-alert" class="docs-tip-icon"></svg>
+                  <div>
+                    @for (tip of current.tips; track tip) {
+                      <p>{{ tip }}</p>
+                    }
+                  </div>
+                </aside>
+              }
+            </div>
+
+            @if (current.screen; as screen) {
+              <app-phone-frame class="docs-phone" [label]="screen.label" [src]="shots[screen.key]">
+                @switch (screen.key) {
+                  @case ('hoje') {
+                    <app-today-screen />
+                  }
+                  @case ('alarme') {
+                    <app-alarm-screen />
+                  }
+                  @case ('saude') {
+                    <app-health-screen />
+                  }
+                  @case ('scanner') {
+                    <app-scanner-screen />
+                  }
+                  @case ('estoque') {
+                    <app-stock-screen />
+                  }
+                  @case ('adesao') {
+                    <app-adherence-screen />
+                  }
+                }
+              </app-phone-frame>
+            }
+          </article>
+        }
+
+        <div class="docs-nav">
+          <button
+            type="button"
+            class="btn btn-link"
+            [disabled]="activeIndex() === 0"
+            (click)="select(activeIndex() - 1)"
+          >
+            ← Anterior
+          </button>
+          <button
+            type="button"
+            class="btn btn-link"
+            [disabled]="activeIndex() === topics.length - 1"
+            (click)="select(activeIndex() + 1)"
+          >
+            Próximo →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

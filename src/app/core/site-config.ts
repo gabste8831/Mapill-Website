@@ -17,6 +17,32 @@ export const SITE_CONFIG = {
   },
 
   /** Links do rodapé. Vazio esconde o link até a página existir. */
+  /**
+   * Vídeos do YouTube. Cole o ID (o trecho depois de `v=` no endereço) em `id`.
+   * Com `id` vazio, o cartão aparece como "em breve".
+   */
+  videos: [
+    { id: '', title: 'Conheça o Mapill em 1 minuto', description: 'Uma volta rápida pelo app.' },
+    { id: '', title: 'Como cadastrar um remédio', description: 'Do código de barras ao primeiro alarme.' },
+    { id: '', title: 'Para quem cuida de alguém', description: 'Acompanhe o tratamento de um familiar.' },
+  ] as { id: string; title: string; description: string }[],
+
+  /**
+   * Prints reais do app, dentro de `public/images/telas/`. Vazio mantém a tela simulada.
+   * Exemplo: alarme: '/images/telas/alarme.png'
+   */
+  screenshots: {
+    hoje: '',
+    alarme: '',
+    saude: '',
+    scanner: '',
+    estoque: '',
+    adesao: '',
+  },
+
+  /** Fotos dos casos de uso, em `public/images/casos/`. Vazio mostra um espaço reservado. */
+  useCaseImages: ['', '', ''],
+
   termsUrl: '',
   privacyUrl: '',
 } as const;

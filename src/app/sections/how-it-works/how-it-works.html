@@ -15,7 +15,7 @@
             CMED (Anvisa) e preenche os dados. Se preferir, digite.
           </p>
         </div>
-        <app-phone-frame class="mini-phone" label="Cadastro de medicamento por código de barras">
+        <app-phone-frame class="mini-phone" label="Cadastro de medicamento por código de barras" [src]="shots.scanner">
           <app-scanner-screen />
         </app-phone-frame>
       </article>
@@ -28,7 +28,7 @@
             Na hora da dose, o celular toca mesmo bloqueado. Um toque em “Tomei” e fica registrado.
           </p>
         </div>
-        <app-phone-frame class="mini-phone" label="Alarme de dose em tela cheia">
+        <app-phone-frame class="mini-phone" label="Alarme de dose em tela cheia" [src]="shots.alarme">
           <app-alarm-screen />
         </app-phone-frame>
       </article>
@@ -40,10 +40,10 @@
           <p>O app desconta o estoque, avisa antes de acabar e mostra sua semana de adesão.</p>
         </div>
         <div class="stacked-mini">
-          <app-phone-frame class="mini-phone" label="Adesão semanal">
+          <app-phone-frame class="mini-phone" label="Adesão semanal" [src]="shots.adesao">
             <app-adherence-screen />
           </app-phone-frame>
-          <app-phone-frame class="mini-phone mini-phone-back" label="Controle de estoque">
+          <app-phone-frame class="mini-phone mini-phone-back" label="Controle de estoque" [src]="shots.estoque">
             <app-stock-screen />
           </app-phone-frame>
         </div>

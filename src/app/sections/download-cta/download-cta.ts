@@ -14,5 +14,6 @@ import { Icon } from '../../shared/icon/icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DownloadCta {
+  protected readonly shots = SITE_CONFIG.screenshots;
   protected readonly site = SITE_CONFIG;
 }
