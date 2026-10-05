@@ -19,7 +19,7 @@ export class SiteFooter {
   protected readonly sections = [
     { fragment: 'como-funciona', label: 'Como funciona' },
     { fragment: 'recursos', label: 'Recursos' },
-    { fragment: 'videos', label: 'Vídeos' },
+    ...(SITE_CONFIG.showVideos ? [{ fragment: 'videos', label: 'Vídeos' }] : []),
     { fragment: 'perguntas', label: 'Perguntas' },
   ];
 }

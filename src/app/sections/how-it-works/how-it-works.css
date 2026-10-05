@@ -101,15 +101,15 @@
   --phone-screen-radius: 21px;
   --screen-padding: 34px 11px 12px;
 
-  width: 210px;
-  height: 420px;
+  width: 236px;
   border-radius: 28px;
 }
 
+/* Altura = celular (236px de largura na proporção da tela) + o deslocamento do de trás */
 .stacked-mini {
   position: relative;
-  width: 270px;
-  height: 420px;
+  width: 296px;
+  height: 530px;
 }
 
 .stacked-mini .mini-phone:first-child {

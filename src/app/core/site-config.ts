@@ -1,3 +1,9 @@
+/** Print de uma tela do app: versão do tema claro e, se houver, do escuro */
+export interface Screenshot {
+  claro: string;
+  escuro?: string;
+}
+
 /**
  * Endereços usados pela página. Troque aqui e todos os botões e links acompanham.
  */
@@ -16,33 +22,49 @@ export const SITE_CONFIG = {
     portfolioUrl: 'https://gabrielsteffens.vercel.app',
   },
 
-  /** Links do rodapé. Vazio esconde o link até a página existir. */
+  /**
+   * Seção de vídeos. Fica oculta (com os links "Vídeos" do cabeçalho e do rodapé) até existir
+   * material gravado. Para publicar: preencha os IDs abaixo e troque para `true`.
+   */
+  showVideos: false,
+
   /**
    * Vídeos do YouTube. Cole o ID (o trecho depois de `v=` no endereço) em `id`.
    * Com `id` vazio, o cartão aparece como "em breve".
    */
   videos: [
     { id: '', title: 'Conheça o Mapill em 1 minuto', description: 'Uma volta rápida pelo app.' },
-    { id: '', title: 'Como cadastrar um remédio', description: 'Do código de barras ao primeiro alarme.' },
-    { id: '', title: 'Para quem cuida de alguém', description: 'Acompanhe o tratamento de um familiar.' },
+    {
+      id: '',
+      title: 'Como cadastrar um remédio',
+      description: 'Do código de barras ao primeiro alarme.',
+    },
+    {
+      id: '',
+      title: 'Para quem cuida de alguém',
+      description: 'Acompanhe o tratamento de um familiar.',
+    },
   ] as { id: string; title: string; description: string }[],
 
   /**
-   * Prints reais do app, dentro de `public/images/telas/`. Vazio mantém a tela simulada.
-   * Exemplo: alarme: '/images/telas/alarme.png'
+   * Prints reais do app, em `public/images/telas/`, um por tema do site. Cada nome-base existe em
+   * três larguras (`<nome>-400.webp`, `-640`, `-900`) e o navegador escolhe a mais adequada.
+   * Sem `escuro`, o print claro vale para os dois temas (o alarme é azul em ambos).
+   * `null` mantém a tela simulada.
    */
   screenshots: {
-    hoje: '',
-    alarme: '',
-    saude: '',
-    scanner: '',
-    estoque: '',
-    adesao: '',
-  },
+    hoje: { claro: '/images/telas/hoje-claro', escuro: '/images/telas/hoje-escuro' },
+    alarme: { claro: '/images/telas/alarme' },
+    saude: { claro: '/images/telas/saude-claro', escuro: '/images/telas/saude-escuro' },
+    scanner: { claro: '/images/telas/scanner-claro', escuro: '/images/telas/scanner-escuro' },
+    estoque: { claro: '/images/telas/estoque-claro', escuro: '/images/telas/estoque-escuro' },
+    adesao: { claro: '/images/telas/adesao-claro', escuro: '/images/telas/adesao-escuro' },
+  } as Record<'hoje' | 'alarme' | 'saude' | 'scanner' | 'estoque' | 'adesao', Screenshot | null>,
 
   /** Fotos dos casos de uso, em `public/images/casos/`. Vazio mostra um espaço reservado. */
   useCaseImages: ['', '', ''],
 
+  /** Links do rodapé. Vazio esconde o link até a página existir. */
   termsUrl: '',
   privacyUrl: '',
 } as const;

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { SITE_CONFIG } from '../../core/site-config';
 import { Accessibility } from '../../sections/accessibility/accessibility';
 import { Benefits } from '../../sections/benefits/benefits';
 import { DownloadCta } from '../../sections/download-cta/download-cta';
@@ -15,4 +16,7 @@ import { Videos } from '../../sections/videos/videos';
   templateUrl: './home.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Home {}
+export class Home {
+  /** Vídeos ocultos até haver material: ver `showVideos` em core/site-config.ts */
+  protected readonly showVideos = SITE_CONFIG.showVideos;
+}

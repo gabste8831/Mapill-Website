@@ -63,7 +63,7 @@
             </div>
 
             @if (current.screen; as screen) {
-              <app-phone-frame class="docs-phone" [label]="screen.label" [src]="shots[screen.key]">
+              <app-phone-frame class="docs-phone" [label]="screen.label" [shot]="shots[screen.key]">
                 @switch (screen.key) {
                   @case ('hoje') {
                     <app-today-screen />

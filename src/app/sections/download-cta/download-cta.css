@@ -42,10 +42,9 @@ h2 {
 .cta-phone {
   position: relative;
   z-index: 2;
-  top: 54px;
+  top: 24px;
   right: 36px;
   width: 220px;
-  height: 440px;
   flex-shrink: 0;
   transform: rotate(3deg);
   transition: translate var(--mapill-lento) var(--mapill-curva);
@@ -157,7 +156,6 @@ h2 {
     top: 350px;
     right: -12px;
     width: 180px;
-    height: 360px;
     opacity: 0.16;
   }
 }

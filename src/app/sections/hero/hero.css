@@ -54,7 +54,7 @@ h1 {
 /* Celulares do hero */
 .phone-stage {
   position: relative;
-  min-height: 590px;
+  min-height: 640px;
 }
 
 .phone-halo {
@@ -77,7 +77,6 @@ h1 {
   right: 0;
   bottom: 0;
   width: 238px;
-  height: 476px;
   transform: rotate(3deg);
 }
 
@@ -244,7 +243,7 @@ h1 {
   }
 
   .phone-stage {
-    min-height: 500px;
+    min-height: 540px;
     margin-bottom: -80px;
     transform: scale(0.84);
     transform-origin: top center;
@@ -257,7 +256,6 @@ h1 {
   .alarm-phone {
     right: -5%;
     width: 210px;
-    height: 420px;
   }
 }
 

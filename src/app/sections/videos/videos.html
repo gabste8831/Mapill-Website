@@ -21,7 +21,10 @@
             } @else {
               <button type="button" class="video-play" (click)="play(i)">
                 <img [src]="thumb(video.id)" alt="" loading="lazy" />
-                <span class="video-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span>
+                <span class="video-play-icon"
+                  ><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M8 5v14l11-7z" /></svg
+                ></span>
                 <span class="sr-only">Assistir: {{ video.title }}</span>
               </button>
             }

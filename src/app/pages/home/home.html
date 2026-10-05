@@ -3,6 +3,8 @@
 <app-how-it-works />
 <app-benefits />
 <app-accessibility />
-<app-videos />
+@if (showVideos) {
+  <app-videos />
+}
 <app-faq />
 <app-download-cta />

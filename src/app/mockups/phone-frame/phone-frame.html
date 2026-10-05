@@ -1,7 +1,38 @@
 <div class="phone-speaker"></div>
 <div class="phone-screen">
-  @if (src()) {
-    <img class="phone-shot" [src]="src()" alt="" loading="lazy" />
+  @if (shot(); as shot) {
+    <!-- Os dois prints ficam no HTML e o CSS mostra o do tema ativo, sem piscar ao trocar.
+         sizes="auto" usa a largura real da moldura para escolher o arquivo. -->
+    @if (shot.escuro) {
+      <img
+        class="phone-shot shot-claro"
+        [src]="src(shot.claro)"
+        [srcset]="srcset(shot.claro)"
+        sizes="auto, 280px"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        class="phone-shot shot-escuro"
+        [src]="src(shot.escuro)"
+        [srcset]="srcset(shot.escuro)"
+        sizes="auto, 280px"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    } @else {
+      <img
+        class="phone-shot"
+        [src]="src(shot.claro)"
+        [srcset]="srcset(shot.claro)"
+        sizes="auto, 280px"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    }
   } @else {
     <ng-content />
   }
