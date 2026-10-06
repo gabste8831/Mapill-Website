@@ -32,7 +32,6 @@
 .check-list li {
   display: flex;
   gap: 10px;
-  transition: translate var(--mapill-medio) var(--mapill-curva);
 }
 
 .check-list li::before {
@@ -40,15 +39,6 @@
   content: '✓' / '';
   color: var(--mapill-azul-destaque);
   font-weight: 700;
-  transition: scale var(--mapill-medio) var(--mapill-curva-enfase);
-}
-
-.check-list li:hover {
-  translate: 4px 0;
-}
-
-.check-list li:hover::before {
-  scale: 1.3;
 }
 
 /* Os itens da lista entram um a um depois do bloco de texto (animação, para não atrasar o hover) */

@@ -6,7 +6,6 @@
 .final-cta {
   position: relative;
   display: flex;
-  min-height: 420px;
   align-items: center;
   overflow: hidden;
   padding: 64px;
@@ -38,20 +37,14 @@ h2 {
   font-size: 13px;
 }
 
-/* No desktop o celular fica ao lado do texto, inteiro, levemente deslocado e inclinado */
+/* O celular fica reto ao lado do texto e sai pela borda de baixo do bloco */
 .cta-phone {
   position: relative;
   z-index: 2;
-  top: 24px;
-  right: 36px;
-  width: 220px;
+  width: 250px;
   flex-shrink: 0;
-  transform: rotate(3deg);
-  transition: translate var(--mapill-lento) var(--mapill-curva);
-}
-
-.final-cta:hover .cta-phone {
-  translate: 0 -10px;
+  align-self: flex-start;
+  margin: 0 32px -200px auto;
 }
 
 .cta-capsule {
@@ -67,72 +60,29 @@ h2 {
   opacity: 0.08;
   stroke-width: 1.2;
   rotate: -20deg;
-  transition: rotate 900ms var(--mapill-curva);
 }
 
-.final-cta:hover .cta-capsule {
-  rotate: -8deg;
-}
-
-/* Ao rolar, o celular se endireita e a cápsula gira devagar */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .cta-phone {
-      animation: cta-celular linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 45%;
-    }
-
-    .cta-capsule {
-      animation: cta-capsula linear both;
-      animation-timeline: view();
-      animation-range: entry 0% exit 100%;
-    }
-  }
-}
-
-@keyframes cta-celular {
-  from {
-    rotate: 9deg;
-    scale: 0.92;
-  }
-
-  to {
-    rotate: 0deg;
-    scale: 1;
-  }
-}
-
-@keyframes cta-capsula {
-  from {
-    translate: 0 40px;
-  }
-
-  to {
-    translate: 60px -40px;
-  }
-}
-
-/* Em telas menores ele vira marca-d'água atrás do texto */
+/* Em telas menores o celular desce para baixo do texto, centralizado */
 @media (max-width: 900px) {
+  .final-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+
   .final-cta-copy {
     max-width: 540px;
   }
 
   .cta-phone {
-    position: absolute;
-    z-index: 1;
-    top: 54px;
-    right: -20px;
-    opacity: 0.35;
+    align-self: center;
+    margin: 48px 0 -180px;
   }
 }
 
 @media (max-width: 640px) {
   .final-cta {
-    min-height: 560px;
-    align-items: flex-start;
-    padding: 48px 24px 40px;
+    padding: 48px 24px 0;
   }
 
   .final-cta-copy {
@@ -153,19 +103,7 @@ h2 {
   }
 
   .cta-phone {
-    top: 350px;
-    right: -12px;
-    width: 180px;
-    opacity: 0.16;
-  }
-}
-
-@media (max-width: 380px) {
-  .final-cta {
-    min-height: 580px;
-  }
-
-  .cta-phone {
-    top: 360px;
+    width: 210px;
+    margin-bottom: -150px;
   }
 }

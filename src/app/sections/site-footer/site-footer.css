@@ -120,8 +120,6 @@
 .credit-logo {
   width: 96px;
   color: var(--mapill-texto);
-  transition: scale var(--mapill-medio) var(--mapill-curva);
-  transform-origin: left center;
 }
 
 .credit-text {
@@ -140,23 +138,14 @@
 .credit-arrow {
   width: 14px;
   height: 14px;
-  transition: translate var(--mapill-medio) var(--mapill-curva);
 }
 
 .credit:hover {
   --gabs-dev-sufixo: var(--mapill-azul-destaque);
 }
 
-.credit:hover .credit-logo {
-  scale: 1.05;
-}
-
 .credit:hover .credit-text strong {
   color: var(--mapill-texto);
-}
-
-.credit:hover .credit-arrow {
-  translate: 2px -2px;
 }
 
 @media (min-width: 640px) {

@@ -51,36 +51,8 @@
   place-items: center;
   border-radius: 50%;
   background: var(--mapill-azul-acao);
-  box-shadow: 0 0 0 0 transparent;
   color: #fff;
   font-weight: 700;
-  transition:
-    scale var(--mapill-medio) var(--mapill-curva),
-    box-shadow var(--mapill-medio) var(--mapill-curva);
-}
-
-/* Hover no passo: o número ganha um halo e o celular sobe */
-.timeline-step:hover .step-number {
-  scale: 1.1;
-  box-shadow: 0 0 0 6px var(--mapill-azul-diluido);
-}
-
-.timeline-step > app-phone-frame,
-.stacked-mini {
-  transition: translate var(--mapill-lento) var(--mapill-curva);
-}
-
-.timeline-step:hover > app-phone-frame,
-.timeline-step:hover > .stacked-mini {
-  translate: 0 -8px;
-}
-
-.stacked-mini .mini-phone-back {
-  transition: rotate var(--mapill-lento) var(--mapill-curva);
-}
-
-.timeline-step:hover .mini-phone-back {
-  rotate: 3deg;
 }
 
 .step-copy {

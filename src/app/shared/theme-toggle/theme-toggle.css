@@ -19,10 +19,6 @@
   color: var(--mapill-azul-destaque);
 }
 
-.theme-toggle:active {
-  transform: scale(0.94);
-}
-
 .theme-toggle svg {
   position: absolute;
   width: 20px;
@@ -50,12 +46,4 @@
   opacity: 1;
   rotate: 0deg;
   scale: 1;
-}
-
-.theme-toggle:hover .icon-moon {
-  rotate: -18deg;
-}
-
-:host-context([data-theme='dark']) .theme-toggle:hover .icon-sun {
-  rotate: 45deg;
 }

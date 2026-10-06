@@ -37,11 +37,6 @@
 
 .video-play img {
   object-fit: cover;
-  transition: transform var(--mapill-lento) var(--mapill-curva);
-}
-
-.video-play:hover img {
-  transform: scale(1.04);
 }
 
 .video-play-icon {

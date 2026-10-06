@@ -19,21 +19,25 @@ export class Benefits {
     {
       title: 'Quem trata algo contínuo',
       text: 'Pressão, diabetes, tireoide ou colesterol, sem depender da memória.',
-      alt: 'Pessoa idosa tomando o remédio da manhã',
+      alt: 'Senhora de óculos tomando a dose do remédio em casa',
       image: SITE_CONFIG.useCaseImages[0],
     },
     {
       title: 'Quem toma muitos remédios',
       text: 'Horários e embalagens diferentes, tudo organizado em um lugar.',
-      alt: 'Pessoa idosa conferindo o horário do remédio no celular',
+      alt: 'Mão separando comprimidos em um organizador semanal, ao lado de vários frascos',
       image: SITE_CONFIG.useCaseImages[1],
     },
     {
       title: 'Quem cuida de alguém',
       text: 'Filhos, cuidadores e famílias acompanhando o tratamento de perto.',
-      alt: 'Filha ajudando a mãe a usar o aplicativo',
+      alt: 'Neta ajudando o avô a usar o celular',
       image: SITE_CONFIG.useCaseImages[2],
     },
   ];
   protected readonly shots = SITE_CONFIG.screenshots;
+
+  protected photoSrcset(base: string): string {
+    return [400, 640, 900].map((width) => `${base}-${width}.webp ${width}w`).join(', ');
+  }
 }

@@ -61,8 +61,16 @@ export const SITE_CONFIG = {
     adesao: { claro: '/images/telas/adesao-claro', escuro: '/images/telas/adesao-escuro' },
   } as Record<'hoje' | 'alarme' | 'saude' | 'scanner' | 'estoque' | 'adesao', Screenshot | null>,
 
-  /** Fotos dos casos de uso, em `public/images/casos/`. Vazio mostra um espaço reservado. */
-  useCaseImages: ['', '', ''],
+  /**
+   * Fotos dos casos de uso, em `public/images/casos/` (Unsplash, licença livre). Como os prints,
+   * cada nome-base existe em três larguras (`-400`, `-640`, `-900`), já recortadas em 4:3.
+   * Vazio mostra um espaço reservado.
+   */
+  useCaseImages: [
+    '/images/casos/continuo',
+    '/images/casos/muitos-remedios',
+    '/images/casos/cuidador',
+  ],
 
   /** Links do rodapé. Vazio esconde o link até a página existir. */
   termsUrl: '',

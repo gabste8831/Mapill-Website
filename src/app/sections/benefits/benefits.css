@@ -10,47 +10,28 @@
 }
 
 .benefit-card {
-  min-height: 230px;
   overflow: hidden;
   padding: 24px;
   border-radius: var(--mapill-raio-lg);
   background: var(--mapill-cartao);
   box-shadow: var(--mapill-sombra);
-  /* entrada ao rolar (com o atraso escalonado) + resposta do hover */
+  /* entrada ao rolar (com o atraso escalonado) + cor do hover */
   transition:
     opacity var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms),
     translate var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms),
     scale var(--mapill-entrada) var(--mapill-curva) var(--reveal-delay, 0ms),
-    transform var(--mapill-medio) var(--mapill-curva),
-    box-shadow var(--mapill-medio) var(--mapill-curva);
+    background-color var(--mapill-medio) var(--mapill-curva);
 }
 
+/* Hover só muda o fundo: um tom mais escuro no claro, mais claro no escuro */
 .benefit-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--mapill-sombra-elevada);
+  background: var(--mapill-cartao-hover);
 }
 
 .benefit-icon {
   width: 24px;
   height: 24px;
   color: var(--mapill-azul-destaque);
-  transition:
-    scale var(--mapill-medio) var(--mapill-curva-enfase),
-    rotate var(--mapill-medio) var(--mapill-curva-enfase);
-}
-
-.benefit-card:hover .benefit-icon {
-  scale: 1.18;
-  rotate: -8deg;
-}
-
-/* O celular dentro do cartão sobe e mostra mais da tela */
-.benefit-phone {
-  transition: translate var(--mapill-lento) var(--mapill-curva);
-}
-
-.benefit-card:hover .benefit-phone {
-  translate: 0 -12px;
 }
 
 /* A barra de estoque se esvazia até o nível atual quando o cartão aparece */
@@ -83,7 +64,7 @@
 }
 
 .benefit-card h3 {
-  margin: 24px 0 18px;
+  margin: 16px 0 8px;
 }
 
 .benefit-card p {
@@ -91,33 +72,52 @@
   font-size: 14px;
 }
 
+/* Cartões com celular: texto em cima e o celular saindo pela borda de baixo */
 .benefit-feature,
 .benefit-health {
   display: flex;
-  min-height: 420px;
-  grid-column: span 2;
+  flex-direction: column;
+  grid-row: span 2;
+  padding-bottom: 0;
 }
 
 .benefit-copy {
-  flex: 1;
+  padding-bottom: 24px;
 }
 
-/* Celular inteiro dentro do cartão: o print aparece do horário à barra de navegação */
 .benefit-phone {
   --phone-screen-radius: 20px;
 
-  width: 210px;
   flex: none;
   align-self: center;
-  margin-left: 16px;
+  width: 190px;
+  /* o celular inteiro mede ~410px; só o topo do print aparece e o resto fica sob a borda */
+  margin: auto 0 -140px;
   border-radius: 26px;
+}
+
+/* Faixa final: ícone ao lado do texto, cartão baixo */
+.benefit-wide {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  grid-column: span 2;
+}
+
+.benefit-wide .benefit-icon {
+  flex: none;
+  margin-top: 2px;
+}
+
+.benefit-wide h3 {
+  margin-top: 0;
 }
 
 .history-visual {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  padding: 24px 12px;
+  padding: 16px 12px;
   border-radius: var(--mapill-raio-md);
   background: var(--mapill-apoio);
 }
@@ -138,16 +138,14 @@
   margin-top: 12px;
 }
 
-/* Na grade de 4 colunas, a última linha divide o espaço entre os dois cartões */
-@media (min-width: 901px) {
-  .benefit-wide {
-    grid-column: span 2;
-  }
-}
-
+/* 2 colunas: os cartões com celular se alternam entre os lados */
 @media (max-width: 900px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefit-wide {
+    grid-column: auto;
   }
 }
 
@@ -162,27 +160,8 @@
 
   .benefit-feature,
   .benefit-health {
-    min-height: 380px;
-    grid-column: auto;
-    padding-right: 10px;
-  }
-
-  .benefit-phone {
-    width: 165px;
-  }
-}
-
-@media (max-width: 380px) {
-  .benefit-feature,
-  .benefit-health {
-    display: block;
-    min-height: auto;
-    padding-right: 22px;
-  }
-
-  .benefit-phone {
-    width: 180px;
-    margin: 24px auto 0;
+    grid-row: auto;
+    padding-bottom: 0;
   }
 }
 

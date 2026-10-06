@@ -17,21 +17,13 @@
     color var(--mapill-rapido) var(--mapill-curva),
     background-color var(--mapill-rapido) var(--mapill-curva),
     box-shadow var(--mapill-medio) var(--mapill-curva),
-    filter var(--mapill-rapido) var(--mapill-curva),
-    translate var(--mapill-medio) var(--mapill-curva),
-    transform var(--mapill-rapido) var(--mapill-curva);
+    filter var(--mapill-rapido) var(--mapill-curva);
 }
 
 .btn svg {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  transition: translate var(--mapill-medio) var(--mapill-curva);
-}
-
-a.btn:active,
-button.btn:active {
-  transform: scale(0.98);
 }
 
 /* Botão desenhado dentro de um mockup: só ilustração */
@@ -40,24 +32,11 @@ span.btn {
   pointer-events: none;
 }
 
-/* Botões cheios sobem um pouco e ganham sombra no hover */
+/* Botões cheios: no hover muda só a cor (regra de cada variante abaixo), sem movimento */
 .btn-primary,
 .btn-gradient,
 .btn-white {
   box-shadow: var(--mapill-sombra);
-}
-
-a.btn-primary:hover,
-a.btn-gradient:hover,
-a.btn-white:hover {
-  translate: 0 -2px;
-  box-shadow: var(--mapill-sombra-flutuante);
-}
-
-/* Ícones com direção acompanham o gesto: download desce, seta para baixo desce */
-.btn:hover svg[data-icon='download'],
-.btn:hover svg[data-icon='arrow-down'] {
-  translate: 0 2px;
 }
 
 .btn-primary {

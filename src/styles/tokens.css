@@ -18,6 +18,7 @@
   /* superfícies e texto */
   --mapill-fundo: #f1f4f8;
   --mapill-cartao: #ffffff;
+  --mapill-cartao-hover: #f6f8fb;
   --mapill-apoio: #f5f7fa;
   --mapill-superficie: #e9edf3;
   --mapill-texto: #141719;
@@ -75,6 +76,7 @@
   --mapill-azul-diluido-texto: #b9d3ff;
   --mapill-fundo: #0f1319;
   --mapill-cartao: #191f27;
+  --mapill-cartao-hover: #202731;
   --mapill-apoio: #222933;
   --mapill-superficie: #2a323d;
   --mapill-texto: #e6e9ee;

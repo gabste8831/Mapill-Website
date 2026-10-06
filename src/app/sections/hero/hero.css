@@ -80,16 +80,6 @@ h1 {
   transform: rotate(3deg);
 }
 
-.hero-phone,
-.alarm-phone {
-  transition: scale var(--mapill-lento) var(--mapill-curva);
-}
-
-.hero-phone:hover,
-.alarm-phone:hover {
-  scale: 1.02;
-}
-
 /* Entrada ao carregar: o texto sobe em sequência e os celulares deslizam da direita */
 .hero-copy > * {
   animation: hero-sobe 640ms var(--mapill-curva) both;

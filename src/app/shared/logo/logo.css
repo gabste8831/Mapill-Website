@@ -14,11 +14,6 @@
   display: block;
   width: 106px;
   height: auto;
-  transition: scale var(--mapill-medio) var(--mapill-curva);
-}
-
-.brand-logo:hover .brand-lockup {
-  scale: 1.04;
 }
 
 .logo-escuro {

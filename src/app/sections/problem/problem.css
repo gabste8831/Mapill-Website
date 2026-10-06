@@ -32,7 +32,6 @@
   font-size: 38px;
   font-weight: 300;
   line-height: 1.3;
-  transition: transform var(--mapill-medio) var(--mapill-curva);
 }
 
 /* Linha azul que cresce sob o número no hover */
@@ -45,10 +44,6 @@
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform var(--mapill-lento) var(--mapill-curva);
-}
-
-.problem-grid article:hover .problem-number {
-  transform: translateY(-4px);
 }
 
 .problem-grid article:hover .problem-number::after {
