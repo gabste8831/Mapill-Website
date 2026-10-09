@@ -22,7 +22,6 @@
 - Nada em andamento
 
 ## Pendente
-- Deixar o repositório público, para o link do APK abrir para os visitantes
 - Páginas de termos de uso e política de privacidade (os links voltam ao rodapé quando os endereços forem preenchidos)
 - Resposta para "É gratuito?" no FAQ
 - Domínio definitivo, para adicionar URL canônica, imagem de compartilhamento (og:image) e sitemap
