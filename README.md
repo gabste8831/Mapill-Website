@@ -26,12 +26,13 @@ npm run preview    # serve o build localmente para conferir
 
 ## Publicando
 
-1. **APK:** coloque o arquivo em `public/downloads/mapill.apk`. Se preferir hospedar fora (por
-   exemplo, na última versão do GitHub Releases), troque `apkUrl` em
-   `src/app/core/site-config.ts`. Todos os botões de download usam esse endereço.
+1. **APK:** fica nas [Releases do GitHub](https://github.com/gabste8831/Mapill-Website/releases),
+   porque passa do limite de 100 MB para arquivos no repositório. Os botões de download apontam
+   para `releases/latest/download/Mapill.apk` (`apkUrl` em `src/app/core/site-config.ts`), então
+   uma versão nova é só uma Release nova com um arquivo chamado exatamente `Mapill.apk`. O
+   repositório precisa ser público para o link abrir para os visitantes.
 2. Rode `npm run build` e publique o conteúdo de `dist/mapill-landing/browser` (Netlify, Vercel,
    GitHub Pages, Firebase Hosting, Cloudflare Pages ou qualquer servidor estático).
-3. Confira se a hospedagem entrega `.apk` com o tipo `application/vnd.android.package-archive`.
 
 ## Estrutura
 
@@ -48,14 +49,13 @@ src/
 └── app/
     ├── app.*                monta a página: cabeçalho, seções e rodapé
     ├── core/
-    │   ├── site-config.ts   endereço do APK, e-mail de contato e links do rodapé
+    │   ├── site-config.ts   link do APK, e-mail de contato e links do rodapé
     │   └── reveal.directive.ts
     ├── shared/              ícone (SVG do Lucide, sem dependência) e logo oficial
     ├── mockups/             moldura do celular, cartão de dose, selo de estado e as 6 telas do app
     └── sections/            uma pasta por seção da página
 public/
-├── images/                  logos oficiais (claro e escuro) e ícone do app
-└── downloads/               lugar do APK
+└── images/                  logos, ícone, prints do app e fotos dos casos de uso
 ```
 
 ## Onde mexer

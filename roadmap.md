@@ -14,12 +14,15 @@
 - Efeitos de rolagem (entradas escalonadas, linha do tempo desenhada, parallax no hero, barra de progresso) e hovers em links, botões, cartões e ícones
 - Rodapé em colunas com navegação, contato e crédito ao Gabs.dev com link para o portfólio
 - Correção do erro TS5011 do `tsconfig.app.json` no TypeScript 6 do VS Code
+- APK 1.0.0 publicado nas Releases do GitHub, com todos os botões apontando para a última versão
+- Documentação reescrita a partir do manual do usuário do TCC (primeiro acesso, telas, cadastro, alarme, Home, estoque, compromissos, calendário, adesão e relatório, ficha, aparência, conta e dados)
+- Textos de alarme, silencioso, temas e uso sem internet alinhados ao manual
 
 ## Em andamento
 - Nada em andamento
 
 ## Pendente
-- Publicar o arquivo do APK (`public/downloads/mapill.apk` ou link externo em `site-config.ts`)
+- Deixar o repositório público, para o link do APK abrir para os visitantes
 - Páginas de termos de uso e política de privacidade (os links voltam ao rodapé quando os endereços forem preenchidos)
 - Resposta para "É gratuito?" no FAQ
 - Domínio definitivo, para adicionar URL canônica, imagem de compartilhamento (og:image) e sitemap

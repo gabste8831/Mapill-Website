@@ -25,12 +25,13 @@ export class Faq {
     },
     {
       question: 'Precisa de internet?',
-      answer: 'Não. O Mapill funciona offline e salva tudo primeiro no celular.',
+      answer:
+        'Não. O Mapill funciona por completo sem internet e salva tudo no celular. Se você entrou com a conta do Google, as alterações são enviadas para ela assim que a conexão voltar.',
     },
     {
       question: 'O alarme toca com o celular no silencioso ou bloqueado?',
       answer:
-        'Toca com o celular bloqueado. Em alguns aparelhos, como Xiaomi, é preciso liberar a inicialização automática, e o próprio app mostra o passo a passo.',
+        'Sim, se você escolher o lembrete “Alarme”: ele toca alto e vibra mesmo no silencioso e com a tela bloqueada. A “Notificação” respeita o silencioso. O celular precisa das autorizações que o app pede; se faltar alguma, um aviso aparece na Home e o app leva você direto à configuração.',
     },
     {
       question: 'Tem para iPhone?',

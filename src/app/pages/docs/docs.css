@@ -124,6 +124,10 @@
   font-weight: 600;
 }
 
+.docs-download {
+  margin-top: 28px;
+}
+
 .docs-tip {
   display: flex;
   margin-top: 28px;
@@ -153,6 +157,23 @@
 .docs-nav .btn:disabled {
   opacity: 0.4;
   cursor: default;
+}
+
+.docs-disclaimer {
+  display: flex;
+  max-width: 760px;
+  margin: 48px auto 0;
+  gap: 12px;
+  color: var(--mapill-texto-secundario);
+  font-size: 15px;
+}
+
+.docs-disclaimer-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--mapill-azul-diluido-texto);
 }
 
 @media (max-width: 900px) {

@@ -9,10 +9,11 @@ export interface Screenshot {
  */
 export const SITE_CONFIG = {
   /**
-   * Arquivo do aplicativo. Coloque o APK em `public/downloads/mapill.apk`
-   * ou troque por um link externo (por exemplo, a última versão no GitHub Releases).
+   * Arquivo do aplicativo, servido pelas Releases do GitHub (o APK passa do limite de 100 MB
+   * para arquivos no repositório). `latest` sempre aponta para a Release mais recente: para
+   * publicar uma versão nova, crie uma Release com o arquivo `Mapill.apk`, sem mexer no site.
    */
-  apkUrl: '/downloads/mapill.apk',
+  apkUrl: 'https://github.com/gabste8831/Mapill-Website/releases/latest/download/Mapill.apk',
 
   contactEmail: 'contato@mapill.app',
 

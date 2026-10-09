@@ -50,6 +50,13 @@
                 }
               </ol>
 
+              @if (current.download) {
+                <a class="btn btn-gradient docs-download" [href]="site.apkUrl" download>
+                  <svg appIcon="download"></svg>
+                  Baixar APK para Android
+                </a>
+              }
+
               @if (current.tips) {
                 <aside class="docs-tip">
                   <svg appIcon="triangle-alert" class="docs-tip-icon"></svg>
@@ -109,5 +116,14 @@
         </div>
       </div>
     </div>
+
+    <p class="docs-disclaimer">
+      <svg appIcon="heart-pulse" class="docs-disclaimer-icon"></svg>
+      <span>
+        O Mapill organiza a rotina e avisa nos horários, mas não substitui a orientação do médico ou
+        do farmacêutico. Doses, horários e duração do tratamento devem seguir sempre a prescrição
+        médica.
+      </span>
+    </p>
   </div>
 </section>
