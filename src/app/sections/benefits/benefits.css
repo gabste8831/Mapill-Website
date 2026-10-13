@@ -113,6 +113,31 @@
   margin-top: 0;
 }
 
+/* Relatório: a folha do PDF à direita, saindo pela borda de baixo; só o cabeçalho aparece */
+.benefit-report {
+  position: relative;
+  min-height: 168px;
+  padding-right: 216px;
+}
+
+.report-sheet {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 168px;
+  height: auto;
+  /* no tema claro a folha é branca como o cartão: o contorno a separa do fundo */
+  border: 1px solid var(--mapill-borda);
+  border-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  box-shadow: var(--mapill-sombra);
+  transition: translate var(--mapill-medio) var(--mapill-curva);
+}
+
+.benefit-report:hover .report-sheet {
+  translate: 0 -6px;
+}
+
 .history-visual {
   display: flex;
   flex-wrap: wrap;
@@ -146,6 +171,25 @@
 
   .benefit-wide {
     grid-column: auto;
+  }
+
+  /* Sem espaço ao lado do texto: a folha desce para baixo dele e mostra só o topo */
+  .benefit-report {
+    flex-wrap: wrap;
+    min-height: 0;
+    padding-right: 24px;
+    padding-bottom: 0;
+  }
+
+  .report-sheet {
+    position: static;
+    flex: 1 0 100%;
+    width: 100%;
+    max-width: 280px;
+    height: 150px;
+    margin: 4px auto 0;
+    object-fit: cover;
+    object-position: top;
   }
 }
 

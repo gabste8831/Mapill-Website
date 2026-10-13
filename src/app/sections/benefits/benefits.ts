@@ -36,6 +36,7 @@ export class Benefits {
     },
   ];
   protected readonly shots = SITE_CONFIG.screenshots;
+  protected readonly reportImage = SITE_CONFIG.reportImage;
 
   protected photoSrcset(base: string): string {
     return [400, 640, 900].map((width) => `${base}-${width}.webp ${width}w`).join(', ');

@@ -70,12 +70,31 @@
         </div>
       </article>
 
-      <article class="benefit-card benefit-wide" appReveal="scale" [revealDelay]="100">
+      <article
+        class="benefit-card benefit-wide"
+        [class.benefit-report]="reportImage"
+        appReveal="scale"
+        [revealDelay]="100"
+      >
         <svg appIcon="file-down" filled class="benefit-icon"></svg>
         <div>
           <h3>Relatório em PDF.</h3>
           <p>Leve à consulta um resumo do tratamento e da adesão.</p>
         </div>
+        @if (reportImage) {
+          <!-- A folha sai pela borda de baixo, como os celulares dos cartões maiores -->
+          <img
+            class="report-sheet"
+            [src]="reportImage + '-400.webp'"
+            [srcset]="photoSrcset(reportImage)"
+            sizes="200px"
+            alt="Primeira página do relatório em PDF, com os tratamentos em curso e a média de adesão"
+            width="400"
+            height="889"
+            loading="lazy"
+            decoding="async"
+          />
+        }
       </article>
     </div>
     <div class="use-cases">

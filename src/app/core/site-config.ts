@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
    */
   apkUrl: 'https://github.com/gabste8831/Mapill-Website/releases/latest/download/Mapill.apk',
 
-  contactEmail: 'contato@mapill.app',
+  contactEmail: 'gabrielsteffens2003@gmail.com',
 
   /** Crédito do desenvolvedor no rodapé */
   developer: {
@@ -50,17 +50,24 @@ export const SITE_CONFIG = {
   /**
    * Prints reais do app, em `public/images/telas/`, um por tema do site. Cada nome-base existe em
    * três larguras (`<nome>-400.webp`, `-640`, `-900`) e o navegador escolhe a mais adequada.
-   * Sem `escuro`, o print claro vale para os dois temas (o alarme é azul em ambos).
+   * Sem `escuro`, o print claro vale para os dois temas (o alarme é azul em ambos; scanner e
+   * adesão só têm o print do tema claro).
    * `null` mantém a tela simulada.
    */
   screenshots: {
     hoje: { claro: '/images/telas/hoje-claro', escuro: '/images/telas/hoje-escuro' },
     alarme: { claro: '/images/telas/alarme' },
     saude: { claro: '/images/telas/saude-claro', escuro: '/images/telas/saude-escuro' },
-    scanner: { claro: '/images/telas/scanner-claro', escuro: '/images/telas/scanner-escuro' },
+    scanner: { claro: '/images/telas/scanner' },
     estoque: { claro: '/images/telas/estoque-claro', escuro: '/images/telas/estoque-escuro' },
-    adesao: { claro: '/images/telas/adesao-claro', escuro: '/images/telas/adesao-escuro' },
+    adesao: { claro: '/images/telas/adesao' },
   } as Record<'hoje' | 'alarme' | 'saude' | 'scanner' | 'estoque' | 'adesao', Screenshot | null>,
+
+  /**
+   * Relatório em PDF gerado pelo app, em `public/images/relatorio/`, nas mesmas três larguras.
+   * Aparece no cartão "Relatório em PDF" dos recursos. Vazio mostra só o ícone.
+   */
+  reportImage: '/images/relatorio/relatorio',
 
   /**
    * Fotos dos casos de uso, em `public/images/casos/` (Unsplash, licença livre). Como os prints,
