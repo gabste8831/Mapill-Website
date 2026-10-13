@@ -166,9 +166,52 @@ h1 {
   }
 }
 
+/*
+ * Duas colunas: o hero ocupa exatamente a altura da tela, descontado o cabeçalho fixo (72px).
+ * Os celulares e o título encolhem junto com a altura disponível, para tudo aparecer de cara
+ * também em notebooks; em monitores altos ficam no tamanho cheio (palco de 640px).
+ */
 @media (min-width: 1024px) {
   .hero-grid {
+    --hero-respiro: clamp(20px, 5vh, 56px);
+    --stage-h: clamp(440px, calc(100svh - 72px - 2 * var(--hero-respiro)), 640px);
+
     grid-template-columns: 1.03fr 0.97fr;
+    min-height: 100svh;
+    padding-top: calc(72px + var(--hero-respiro));
+    padding-bottom: var(--hero-respiro);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, min(5.1vw, 7.6vh), 4rem);
+  }
+
+  /* O palco mantém a proporção original (489 × 640) e os celulares, a mesma relação com ele */
+  .phone-stage {
+    width: min(100%, calc(var(--stage-h) * 0.765));
+    min-height: 0;
+    height: var(--stage-h);
+    margin-inline: auto;
+  }
+
+  .hero-phone {
+    width: calc(var(--stage-h) * 0.456);
+  }
+
+  .alarm-phone {
+    width: calc(var(--stage-h) * 0.372);
+  }
+}
+
+/* Telas baixas: menos espaço entre os blocos do texto */
+@media (min-width: 1024px) and (max-height: 760px) {
+  .hero .eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .hero-sub {
+    margin: 16px 0 22px;
+    font-size: 17px;
   }
 }
 

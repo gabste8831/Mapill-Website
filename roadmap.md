@@ -17,6 +17,8 @@
 - APK 1.0.0 publicado nas Releases do GitHub, com todos os botões apontando para a última versão
 - Documentação reescrita a partir do manual do usuário do TCC (primeiro acesso, telas, cadastro, alarme, Home, estoque, compromissos, calendário, adesão e relatório, ficha, aparência, conta e dados)
 - Textos de alarme, silencioso, temas e uso sem internet alinhados ao manual
+- Prints novos das telas Hoje (claro e escuro), alarme, scanner e adesão, folha do relatório em PDF no cartão de recursos e e-mail de contato atualizado
+- Hero ocupando a altura exata da tela no computador, com celulares e título se ajustando a notebooks
 
 ## Em andamento
 - Nada em andamento
@@ -24,4 +26,5 @@
 ## Pendente
 - Páginas de termos de uso e política de privacidade (os links voltam ao rodapé quando os endereços forem preenchidos)
 - Resposta para "É gratuito?" no FAQ
-- Domínio definitivo, para adicionar URL canônica, imagem de compartilhamento (og:image) e sitemap
+- Domínio definitivo, para adicionar URL canônica, imagem de compartilhamento (og:image, já pronta em `public/images/compartilhamento.jpg`) e sitemap
+- Prints novos da ficha de saúde e do estoque (os atuais ainda são os antigos)
