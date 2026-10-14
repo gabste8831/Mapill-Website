@@ -3,7 +3,7 @@
 }
 
 .docs {
-  min-height: 100vh;
+  min-height: calc(100vh / var(--zoom));
   padding-top: 144px;
 }
 
@@ -63,20 +63,33 @@
   flex-shrink: 0;
 }
 
+/* Sem caixa em volta: texto e print usam a largura toda ao lado dos assuntos */
 .docs-panel {
-  min-height: 560px;
-  padding: 40px;
-  border: 1px solid var(--mapill-borda);
-  border-radius: var(--mapill-raio-xl);
-  background: var(--mapill-cartao);
+  min-width: 0;
 }
 
 .docs-article {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 40px;
+  gap: 56px;
   align-items: start;
   animation: docs-in var(--mapill-medio) var(--mapill-curva);
+}
+
+.docs-copy {
+  max-width: 64ch;
+}
+
+/*
+ * O print acompanha a leitura, preso logo abaixo do cabeçalho, e cabe inteiro na tela:
+ * a altura é a da tela menos o cabeçalho e um respiro, até o tamanho cheio (292px de largura).
+ */
+.docs-phone {
+  --docs-phone-h: clamp(380px, calc(100svh / var(--zoom) - 96px - 32px), 640px);
+
+  position: sticky;
+  top: 96px;
+  width: calc((var(--docs-phone-h) - 18px) * 0.45 + 18px);
 }
 
 @keyframes docs-in {
@@ -203,15 +216,14 @@
     white-space: nowrap;
   }
 
-  .docs-panel {
-    padding: 24px 20px;
-  }
-
   .docs-article {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .docs-phone {
+    position: static;
+    width: min(292px, 100%);
     margin-inline: auto;
   }
 }

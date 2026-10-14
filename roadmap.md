@@ -19,6 +19,9 @@
 - Textos de alarme, silencioso, temas e uso sem internet alinhados ao manual
 - Prints novos das telas Hoje (claro e escuro), alarme, scanner e adesão, folha do relatório em PDF no cartão de recursos e e-mail de contato atualizado
 - Hero ocupando a altura exata da tela no computador, com celulares e título se ajustando a notebooks
+- Rolagem suave com a roda do mouse e o touchpad (Lenis), mantendo a nativa no celular e para quem pede menos movimento
+- Documentação sem a caixa em volta do conteúdo, com o print acompanhando a leitura e cabendo na altura da tela
+- Site em escala de 90% no computador, como no zoom de 90% do navegador
 
 ## Em andamento
 - Nada em andamento

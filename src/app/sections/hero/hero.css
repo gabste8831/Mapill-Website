@@ -173,17 +173,17 @@ h1 {
  */
 @media (min-width: 1024px) {
   .hero-grid {
-    --hero-respiro: clamp(20px, 5vh, 56px);
-    --stage-h: clamp(440px, calc(100svh - 72px - 2 * var(--hero-respiro)), 640px);
+    --hero-respiro: clamp(20px, 5vh / var(--zoom), 56px);
+    --stage-h: clamp(440px, calc(100svh / var(--zoom) - 72px - 2 * var(--hero-respiro)), 640px);
 
     grid-template-columns: 1.03fr 0.97fr;
-    min-height: 100svh;
+    min-height: calc(100svh / var(--zoom));
     padding-top: calc(72px + var(--hero-respiro));
     padding-bottom: var(--hero-respiro);
   }
 
   h1 {
-    font-size: clamp(2.5rem, min(5.1vw, 7.6vh), 4rem);
+    font-size: clamp(2.5rem, min(5.1vw, 7.6vh) / var(--zoom), 4rem);
   }
 
   /* O palco mantém a proporção original (489 × 640) e os celulares, a mesma relação com ele */

@@ -15,8 +15,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/*
+ * Escala do site. No computador tudo é desenhado a 90%, como no zoom de 90% do navegador:
+ * fica mais arejado em notebooks. O zoom fica no <body>, e não no <html>, para a altura da
+ * página continuar certa para a rolagem suave e a barra de progresso.
+ * O zoom do CSS também encolhe vh e vw; por isso quem precisa da altura real da tela usa
+ * calc(100svh / var(--zoom)).
+ */
+:root {
+  --zoom: 1;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --zoom: 0.9;
+  }
+}
+
 body {
-  min-height: 100vh;
+  zoom: var(--zoom);
+  min-height: calc(100vh / var(--zoom));
   background: var(--mapill-fundo);
   color: var(--mapill-texto);
   font-family: var(--mapill-fonte);

@@ -1,6 +1,6 @@
 /* Os celulares inclinados passam da borda; o recorte evita rolagem horizontal */
 .page {
-  min-height: 100vh;
+  min-height: calc(100vh / var(--zoom));
   overflow-x: hidden;
   overflow-x: clip;
 }

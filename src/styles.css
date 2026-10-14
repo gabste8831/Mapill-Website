@@ -1,4 +1,5 @@
 /* Estilos globais. O estilo de cada seção fica no .css do próprio componente. */
+@import 'lenis/dist/lenis.css';
 @import './styles/tokens.css';
 @import './styles/base.css';
 @import './styles/layout.css';
